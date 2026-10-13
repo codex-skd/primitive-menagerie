@@ -24,6 +24,12 @@ public final class PMItems {
     /** {@code dodo} — raw meat, dropped by the Dodo. */
     public static final DeferredItem<Item> DODO = register("dodo");
 
+    /** {@code dodo_egg} — laid by the Dodo; a placeholder until the P6 throwing egg item exists. */
+    public static final DeferredItem<Item> DODO_EGG = register("dodo_egg");
+
+    /** {@code wonder_sap} — held by the Grove Sprite; a placeholder until the P6 sap item exists. */
+    public static final DeferredItem<Item> WONDER_SAP = register("wonder_sap");
+
     /** {@code spider_egg} — dropped by the Mother Spider. */
     public static final DeferredItem<Item> SPIDER_EGG = register("spider_egg");
 

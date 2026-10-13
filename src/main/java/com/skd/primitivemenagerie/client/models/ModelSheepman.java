@@ -9,7 +9,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.passive.Sheepman;
 
 /**
  * Sheepman model, mirroring the original {@code ModelSheepman}. The original built two variants
@@ -22,7 +23,10 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelSheepman extends HierarchicalModel<LivingEntity> {
+public class ModelSheepman extends HierarchicalModel<Sheepman> {
+
+    /** True when this instance is the wool overlay (original {@code ModelSheepman(1)}). */
+    private boolean woolVariant;
 
     private final ModelPart root;
     private final ModelPart head;
@@ -96,11 +100,31 @@ public class ModelSheepman extends HierarchicalModel<LivingEntity> {
         return this.root;
     }
 
+    /**
+     * Selects the skin variant (original {@code ModelSheepman(0)}) or the wool overlay variant
+     * (original {@code ModelSheepman(1)}).
+     */
+    public void setWoolVariant(boolean wool) {
+        this.woolVariant = wool;
+
+        this.foldedArms.visible = wool;
+        this.headWool.visible = wool;
+        this.bodyWool.visible = wool;
+        this.legLeftWool.visible = wool;
+        this.legRightWool.visible = wool;
+
+        this.head.visible = !wool;
+        this.body.visible = !wool;
+        this.legLeft.visible = !wool;
+        this.legRight.visible = !wool;
+        this.armLeft.visible = !wool;
+        this.armRight.visible = !wool;
+    }
+
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Sheepman entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
-        // TODO(entity-phase): the original swapped yaw/pitch and used the render scale for the head
-        // pitch; kept verbatim so the port stays faithful.
+        // The original swapped yaw/pitch and used the render scale factor for the head pitch.
         float scaleFactor = 0.0625F;
         this.head.yRot = headPitch / (180F / (float) Math.PI);
         this.head.xRot = scaleFactor / (180F / (float) Math.PI);
@@ -115,11 +139,10 @@ public class ModelSheepman extends HierarchicalModel<LivingEntity> {
         this.armRight.xRot = -Mth.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.6F * limbSwingAmount;
         this.armLeft.xRot = Mth.cos(limbSwing * 0.6662F * 2.0F + 0.0F) * 0.6F * limbSwingAmount;
 
-        // Default visibility: regular body shown, wool overlay and folded arms hidden.
-        this.headWool.visible = false;
-        this.bodyWool.visible = false;
-        this.legLeftWool.visible = false;
-        this.legRightWool.visible = false;
-        this.foldedArms.visible = false;
+        // The skin variant only shows the arms while the sheepman is sheared.
+        if (!this.woolVariant) {
+            this.armLeft.visible = entity.getSheared();
+            this.armRight.visible = entity.getSheared();
+        }
     }
 }

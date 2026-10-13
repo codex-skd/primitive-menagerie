@@ -9,7 +9,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.passive.GroveSprite;
 
 /**
  * Grove sprite model, mirroring the original {@code ModelGroveSprite}. The original built a stump
@@ -23,7 +24,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelGroveSprite extends HierarchicalModel<LivingEntity> {
+public class ModelGroveSprite extends HierarchicalModel<GroveSprite> {
 
     private final ModelPart root;
     private final ModelPart bipedHead;
@@ -91,8 +92,31 @@ public class ModelGroveSprite extends HierarchicalModel<LivingEntity> {
         return this.root;
     }
 
+    /** @return the right arm part, used by the held-item layer */
+    public ModelPart getRightArm() {
+        return this.bipedRightArm;
+    }
+
+    /**
+     * Selects the stump variant (original {@code ModelGroveSprite(0)}) or the leaves variant
+     * (original {@code ModelGroveSprite(1)}) for this model instance. The renderer uses a stump
+     * instance for the body and the two overlay layers use a stump and a leaves instance.
+     */
+    public void setVariant(boolean leavesVariant) {
+        for (int i = 0; i < this.leaf.length; i++) {
+            this.leaf[i].visible = leavesVariant;
+        }
+
+        this.bipedHeadwear.visible = !leavesVariant;
+        this.bipedRightArm.visible = !leavesVariant;
+        this.bipedLeftArm.visible = !leavesVariant;
+        this.bipedRightLeg.visible = !leavesVariant;
+        this.bipedLeftLeg.visible = !leavesVariant;
+        this.stem.visible = !leavesVariant;
+    }
+
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(GroveSprite entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.bipedHead.yRot = netHeadYaw / 57.29578F;
         this.bipedHead.xRot = headPitch / 57.29578F;
@@ -106,16 +130,14 @@ public class ModelGroveSprite extends HierarchicalModel<LivingEntity> {
         this.bipedRightLeg.xRot = Mth.cos(limbSwing * 0.6662F * 2.0F + (float) Math.PI) * 0.8F * limbSwingAmount;
         this.bipedLeftLeg.xRot = -Mth.cos(limbSwing * 0.6662F * 2.0F + (float) Math.PI) * 0.8F * limbSwingAmount;
 
-        // TODO(entity-phase): read EntityGroveSprite.isBegging() once the entity exists.
-        boolean isBegging = false;
-        if (isBegging) {
+        if (entity.isBegging()) {
             this.bipedRightArm.xRot = -1.3F;
         }
 
-        // Leaves variant (original render == 1).
-        for (int i = 0; i < 3; i++) {
-            this.leaf[i].yRot = netHeadYaw / 57.29578F;
-            this.leaf[i].xRot = headPitch / 57.29578F * 0.5F;
+        // Leaves variant (original render == 1): a static spin per leaf index.
+        for (int i = 0; i < this.leaf.length; i++) {
+            this.leaf[i].yRot = 2.0F * ((float) i + 1.0F);
+            this.leaf[i].xRot = 0.0F;
         }
     }
 }

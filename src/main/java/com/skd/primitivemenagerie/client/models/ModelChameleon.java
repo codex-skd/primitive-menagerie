@@ -9,7 +9,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.passive.Chameleon;
 
 /**
  * Chameleon model, mirroring the original {@code ModelChameleon}. The child scaling performed by the
@@ -17,7 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelChameleon extends HierarchicalModel<LivingEntity> {
+public class ModelChameleon extends HierarchicalModel<Chameleon> {
 
     private final ModelPart root;
     private final ModelPart body1;
@@ -122,7 +123,7 @@ public class ModelChameleon extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Chameleon entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         float pitch = headPitch * ((float) Math.PI / 180.0F);
         float yaw = netHeadYaw * ((float) Math.PI / 180.0F);

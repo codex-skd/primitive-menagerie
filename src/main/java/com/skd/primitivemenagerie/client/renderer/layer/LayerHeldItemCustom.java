@@ -4,10 +4,16 @@ package com.skd.primitivemenagerie.client.renderer.layer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 
+import com.skd.primitivemenagerie.client.models.ModelFilchLizard;
+import com.skd.primitivemenagerie.client.models.ModelGroveSprite;
+import com.skd.primitivemenagerie.client.models.ModelLostMiner;
 import com.skd.primitivemenagerie.client.models.ModelTrollager;
 import com.skd.primitivemenagerie.entity.monster.LilyLurker;
 import com.skd.primitivemenagerie.entity.monster.SkeletonWarrior;
 import com.skd.primitivemenagerie.entity.monster.Trollager;
+import com.skd.primitivemenagerie.entity.passive.FilchLizard;
+import com.skd.primitivemenagerie.entity.passive.GroveSprite;
+import com.skd.primitivemenagerie.entity.passive.LostMiner;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
@@ -92,6 +98,76 @@ public class LayerHeldItemCustom<T extends LivingEntity, M extends EntityModel<T
                 renderItem(new ItemStack(state.getBlock()), pose, buffer, entity, packedLight);
                 pose.popPose();
             }
+
+            return;
+        }
+
+        if (entity instanceof FilchLizard) {
+            ItemStack stack = entity.getMainHandItem();
+
+            if (stack.isEmpty()) {
+                return;
+            }
+
+            pose.pushPose();
+            pose.mulPose(Axis.YP.rotationDegrees(90.0F));
+            pose.mulPose(Axis.ZP.rotationDegrees(180.0F));
+            pose.mulPose(Axis.ZP.rotationDegrees(20.0F));
+            pose.translate(-0.55F, -1.0F, -0.05F);
+            renderItem(stack, pose, buffer, entity, packedLight);
+            pose.popPose();
+            return;
+        }
+
+        if (entity instanceof GroveSprite sprite) {
+            if (sprite.getSaplingAmount() <= 0) {
+                return;
+            }
+
+            ItemStack stack = entity.getMainHandItem();
+
+            if (stack.isEmpty()) {
+                return;
+            }
+
+            if (this.getParentModel() instanceof ModelGroveSprite model) {
+                pose.pushPose();
+                model.getRightArm().translateAndRotate(pose);
+                pose.mulPose(Axis.XP.rotationDegrees(-90.0F));
+                pose.mulPose(Axis.YP.rotationDegrees(180.0F));
+                pose.translate(-1.0F / 16.0F + 0.1F, 0.125F, -0.625F + 0.35F);
+                renderItem(stack, pose, buffer, entity, packedLight);
+                pose.popPose();
+            }
+
+            return;
+        }
+
+        if (entity instanceof LostMiner miner) {
+            ItemStack stack = entity.getMainHandItem();
+
+            if (stack.isEmpty()) {
+                return;
+            }
+
+            if (this.getParentModel() instanceof ModelLostMiner model) {
+                pose.pushPose();
+
+                if (miner.isSaved()) {
+                    pose.mulPose(Axis.YN.rotationDegrees(90.0F));
+                    pose.translate(0.25F, 0.15F, -0.1F);
+                } else {
+                    model.getArmRightHand().translateAndRotate(pose);
+                    pose.translate(-0.25F, -0.5F, -0.1F);
+                    pose.mulPose(Axis.XP.rotationDegrees(90.0F));
+                    pose.mulPose(Axis.YP.rotationDegrees(180.0F));
+                }
+
+                renderItem(stack, pose, buffer, entity, packedLight);
+                pose.popPose();
+            }
+
+            return;
         }
     }
 

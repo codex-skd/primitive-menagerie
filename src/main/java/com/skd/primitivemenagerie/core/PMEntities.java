@@ -25,6 +25,13 @@ import com.skd.primitivemenagerie.entity.monster.TreasureSlime;
 import com.skd.primitivemenagerie.entity.monster.Trollager;
 import com.skd.primitivemenagerie.entity.monster.VoidEye;
 import com.skd.primitivemenagerie.entity.monster.Yeti;
+import com.skd.primitivemenagerie.entity.passive.Chameleon;
+import com.skd.primitivemenagerie.entity.passive.Dodo;
+import com.skd.primitivemenagerie.entity.passive.FilchLizard;
+import com.skd.primitivemenagerie.entity.passive.GroveSprite;
+import com.skd.primitivemenagerie.entity.passive.LostMiner;
+import com.skd.primitivemenagerie.entity.passive.Sheepman;
+import com.skd.primitivemenagerie.entity.passive.TravelingMerchant;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -122,6 +129,37 @@ public final class PMEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<Yeti>> YETI =
             PMRegistries.registerMob("yeti", Yeti::new, MobCategory.MONSTER, 1.7F, 3.0F,
                     Yeti::createAttributes, 0xE8E8E8, 0x9AA7B8);
+
+    // ---------------------------------------------------------------------------------------------
+    // Passive / neutral creatures (P5)
+    // ---------------------------------------------------------------------------------------------
+    public static final DeferredHolder<EntityType<?>, EntityType<Chameleon>> CHAMELEON =
+            PMRegistries.registerMob("chameleon", Chameleon::new, MobCategory.CREATURE, 0.7F, 0.5F,
+                    Chameleon::createAttributes, 0x048C00, 0x025600);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Dodo>> DODO =
+            PMRegistries.registerMob("dodo", Dodo::new, MobCategory.CREATURE, 0.75F, 0.75F,
+                    Dodo::createAttributes, 0x725643, 0xBCA18C);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<FilchLizard>> FILCH_LIZARD =
+            PMRegistries.registerMob("filch_lizard", FilchLizard::new, MobCategory.CREATURE, 0.6F, 0.5F,
+                    FilchLizard::createAttributes, 0xC2B694, 0xD1CDC0);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<GroveSprite>> GROVE_SPRITE =
+            PMRegistries.registerMob("grovesprite", GroveSprite::new, MobCategory.CREATURE, 0.5F, 1.0F,
+                    GroveSprite::createAttributes, 0x5B4E3D, 0x62A72F);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<LostMiner>> LOST_MINER =
+            PMRegistries.registerMob("lost_miner", LostMiner::new, MobCategory.MISC, 0.6F, 1.95F,
+                    LostMiner::createAttributes, 0x6C3626, 0xBD8B72);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Sheepman>> SHEEPMAN =
+            PMRegistries.registerMob("sheepman", Sheepman::new, MobCategory.MISC, 0.6F, 1.95F,
+                    Sheepman::createAttributes, 0x262626, 0xB39680);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<TravelingMerchant>> TRAVELING_MERCHANT =
+            PMRegistries.registerMob("traveling_merchant", TravelingMerchant::new, MobCategory.MISC, 0.6F, 1.95F,
+                    TravelingMerchant::createAttributes, 0x606051, 0xBD8B72);
 
     /** Thrown spider egg projectile; registered with the original custom tracking parameters. */
     public static final DeferredHolder<EntityType<?>, EntityType<SpiderEgg>> SPIDER_EGG =

@@ -9,7 +9,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+import com.skd.primitivemenagerie.entity.passive.Dodo;
 
 /**
  * Dodo model, mirroring the original {@code ModelDodo}. The child scaling performed by the original
@@ -17,7 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelDodo extends HierarchicalModel<LivingEntity> {
+public class ModelDodo extends HierarchicalModel<Dodo> {
 
     private final ModelPart root;
     private final ModelPart body;
@@ -87,7 +87,7 @@ public class ModelDodo extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Dodo entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.neck.xRot = headPitch / (220F / (float) Math.PI) - 0.2443461F;
         this.neck.yRot = netHeadYaw / (220F / (float) Math.PI);

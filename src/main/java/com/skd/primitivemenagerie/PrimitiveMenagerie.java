@@ -21,6 +21,7 @@ public class PrimitiveMenagerie {
         modContainer.registerConfig(ModConfig.Type.COMMON, PMConfig.SPEC);
 
         PMRegistries.register(modEventBus);
+        com.skd.primitivemenagerie.network.PMNetwork.register(modEventBus);
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             com.skd.primitivemenagerie.client.PMClientSetup.register(modEventBus);

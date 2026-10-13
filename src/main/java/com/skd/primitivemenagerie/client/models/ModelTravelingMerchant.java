@@ -10,7 +10,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+import com.skd.primitivemenagerie.entity.passive.TravelingMerchant;
 
 /**
  * Traveling merchant model, mirroring the original {@code ModelTravelingMerchant}.
@@ -18,7 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
  * @author Daveyx0
  * @author Gibea
  */
-public class ModelTravelingMerchant extends HierarchicalModel<LivingEntity> {
+public class ModelTravelingMerchant extends HierarchicalModel<TravelingMerchant> {
 
     private final ModelPart root;
     private final ModelPart head;
@@ -93,7 +93,7 @@ public class ModelTravelingMerchant extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(TravelingMerchant entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.head.yRot = netHeadYaw * 0.017453292F;
         this.head.xRot = headPitch * 0.017453292F;

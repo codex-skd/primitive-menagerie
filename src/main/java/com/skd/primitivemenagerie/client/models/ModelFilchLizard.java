@@ -9,7 +9,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+import com.skd.primitivemenagerie.entity.passive.FilchLizard;
 
 /**
  * Filch lizard model, mirroring the original {@code ModelFilchLizard}. The lizard raises its front
@@ -17,7 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelFilchLizard extends HierarchicalModel<LivingEntity> {
+public class ModelFilchLizard extends HierarchicalModel<FilchLizard> {
 
     private final ModelPart root;
     private final ModelPart body;
@@ -104,8 +104,13 @@ public class ModelFilchLizard extends HierarchicalModel<LivingEntity> {
         return this.root;
     }
 
+    /** @return the front-right leg part, used by the held-item layer */
+    public ModelPart getLeg1() {
+        return this.leg1;
+    }
+
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(FilchLizard entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         float pitch = headPitch * ((float) Math.PI / 180.0F);
         float yaw = netHeadYaw * ((float) Math.PI / 180.0F);

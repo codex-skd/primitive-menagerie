@@ -61,6 +61,9 @@ public final class PMRegistries {
         SOUNDS.register(modEventBus);
         modEventBus.addListener(PMRegistries::onEntityAttributeCreation);
 
+        // Register the villager professions of the mod and their trade listener.
+        PMVillagerProfessions.register(modEventBus);
+
         // Force the item registry class to initialise so its deferred entries are created.
         PMItems.register();
         // Force the entity registry class to initialise so its deferred entries are created.

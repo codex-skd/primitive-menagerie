@@ -17,5 +17,12 @@
   "entity.primitive_menagerie.mimic": "Mimic",
   "entity.primitive_menagerie.flame_spewer": "Flame Spewer",
   "entity.primitive_menagerie.void_eye": "Void Eye",
-  "entity.primitive_menagerie.yeti": "Yeti"
+  "entity.primitive_menagerie.yeti": "Yeti",
+  "entity.primitive_menagerie.chameleon": "Chameleon",
+  "entity.primitive_menagerie.dodo": "Dodo",
+  "entity.primitive_menagerie.filch_lizard": "Filch Lizard",
+  "entity.primitive_menagerie.grovesprite": "Grove Sprite",
+  "entity.primitive_menagerie.lost_miner": "Lost Miner",
+  "entity.primitive_menagerie.sheepman": "Sheepman",
+  "entity.primitive_menagerie.traveling_merchant": "Traveling Merchant"
 }

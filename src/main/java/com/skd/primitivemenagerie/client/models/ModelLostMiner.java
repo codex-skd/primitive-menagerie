@@ -10,7 +10,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.passive.LostMiner;
 
 /**
  * Lost miner model, mirroring the original {@code ModelLostMiner}, which extended the vanilla
@@ -23,7 +24,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelLostMiner extends HierarchicalModel<LivingEntity> {
+public class ModelLostMiner extends HierarchicalModel<LostMiner> {
 
     private final ModelPart root;
     private final ModelPart villagerHead;
@@ -101,8 +102,18 @@ public class ModelLostMiner extends HierarchicalModel<LivingEntity> {
         return this.root;
     }
 
+    /** @return the right hand part, used by the held-item layer when the miner is not saved */
+    public ModelPart getArmRightHand() {
+        return this.armRightHand;
+    }
+
+    /** @return the body part, used by the held-item layer when the miner is saved */
+    public ModelPart getVillagerBody() {
+        return this.villagerBody;
+    }
+
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(LostMiner entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.villagerHead.yRot = netHeadYaw * 0.017453292F;
         this.villagerHead.xRot = headPitch * 0.017453292F;
@@ -120,8 +131,7 @@ public class ModelLostMiner extends HierarchicalModel<LivingEntity> {
                 + 1.396263F;
         this.armRightHand.xRot = this.armRightShoulder.xRot;
 
-        // TODO(entity-phase): switch on EntityLostMiner.isSaved() once the entity exists.
-        boolean saved = false;
+        boolean saved = entity.isSaved();
         this.villagerArms.visible = saved;
         this.armLeftShoulder.visible = !saved;
         this.armLeftHand.visible = !saved;
