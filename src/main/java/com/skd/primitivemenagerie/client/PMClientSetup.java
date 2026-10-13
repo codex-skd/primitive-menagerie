@@ -24,11 +24,18 @@ import com.skd.primitivemenagerie.client.models.ModelVoidEye;
 import com.skd.primitivemenagerie.client.models.ModelYeti;
 import com.skd.primitivemenagerie.client.models.PMModelLayers;
 import com.skd.primitivemenagerie.client.renderer.RenderBabySpider;
+import com.skd.primitivemenagerie.client.renderer.RenderBrainSlime;
+import com.skd.primitivemenagerie.client.renderer.RenderEnchantedBook;
+import com.skd.primitivemenagerie.client.renderer.RenderFlyingItem;
 import com.skd.primitivemenagerie.client.renderer.RenderGoblin;
 import com.skd.primitivemenagerie.client.renderer.RenderHarpy;
+import com.skd.primitivemenagerie.client.renderer.RenderHauntedTool;
 import com.skd.primitivemenagerie.client.renderer.RenderMotherSpider;
 import com.skd.primitivemenagerie.client.renderer.RenderPrimitiveCreeper;
+import com.skd.primitivemenagerie.client.renderer.RenderPrimitiveTNTPrimed;
 import com.skd.primitivemenagerie.client.renderer.RenderSkeletonWarrior;
+import com.skd.primitivemenagerie.client.renderer.RenderThrownBlock;
+import com.skd.primitivemenagerie.client.renderer.RenderTreasureSlime;
 import com.skd.primitivemenagerie.core.PMEntities;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
@@ -61,7 +68,15 @@ public final class PMClientSetup {
         event.registerEntityRenderer(PMEntities.BABY_SPIDER.get(), RenderBabySpider::new);
         event.registerEntityRenderer(PMEntities.GOBLIN.get(), RenderGoblin::new);
         event.registerEntityRenderer(PMEntities.HARPY.get(), RenderHarpy::new);
+        event.registerEntityRenderer(PMEntities.TREASURE_SLIME.get(), RenderTreasureSlime::new);
+        event.registerEntityRenderer(PMEntities.BRAIN_SLIME.get(), RenderBrainSlime::new);
+        event.registerEntityRenderer(PMEntities.HAUNTED_TOOL.get(), RenderHauntedTool::new);
+        event.registerEntityRenderer(PMEntities.BEWITCHED_TOME.get(), RenderEnchantedBook::new);
         event.registerEntityRenderer(PMEntities.SPIDER_EGG.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(PMEntities.PRIMITIVE_EGG.get(), RenderFlyingItem::new);
+        event.registerEntityRenderer(PMEntities.THROWN_BLOCK.get(), RenderThrownBlock::new);
+        event.registerEntityRenderer(PMEntities.PRIMITIVE_TNT_PRIMED.get(), RenderPrimitiveTNTPrimed::new);
+        event.registerEntityRenderer(PMEntities.FLAME_SPIT.get(), context -> new ThrownItemRenderer<>(context, 0.75F, true));
     }
 
     private static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {

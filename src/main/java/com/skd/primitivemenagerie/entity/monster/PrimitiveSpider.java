@@ -1,13 +1,7 @@
 // Port of Primitive Mobs by Daveyx0 (CC BY-NC 3.0). The original work has been modified (ported to NeoForge 1.21.1).
 package com.skd.primitivemenagerie.entity.monster;
 
-import java.util.UUID;
-
 import javax.annotation.Nullable;
-
-import com.skd.mobweavecore.common.capabilities.CapabilityTameableEntity;
-import com.skd.mobweavecore.common.capabilities.ITameableEntity;
-import com.skd.mobweavecore.common.capabilities.TameableEntityHandler;
 
 import com.skd.primitivemenagerie.core.PMLootTables;
 
@@ -61,7 +55,7 @@ import net.minecraft.world.phys.Vec3;
  *
  * @author Daveyx0
  */
-public class PrimitiveSpider extends Monster implements ITameableEntity {
+public class PrimitiveSpider extends PrimitiveTameableMob {
 
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID =
             SynchedEntityData.defineId(PrimitiveSpider.class, EntityDataSerializers.BYTE);
@@ -74,56 +68,6 @@ public class PrimitiveSpider extends Monster implements ITameableEntity {
         return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 16.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.30000001192092896D);
-    }
-
-    // ---------------------------------------------------------------------------------------------
-    // Tameable API (backed by the Mobweave Core attachment)
-    // ---------------------------------------------------------------------------------------------
-
-    protected TameableEntityHandler tameable() {
-        return CapabilityTameableEntity.getCapability(this);
-    }
-
-    @Override
-    public boolean isTamed() {
-        return this.tameable().isTamed();
-    }
-
-    @Override
-    public void setTamed(boolean set) {
-        this.tameable().setTamed(set);
-    }
-
-    @Nullable
-    @Override
-    public LivingEntity getOwner(LivingEntity entity) {
-        return this.tameable().getOwner(entity);
-    }
-
-    @Nullable
-    public LivingEntity getOwner() {
-        return this.tameable().getOwner(this);
-    }
-
-    @Nullable
-    @Override
-    public UUID getOwnerId() {
-        return this.tameable().getOwnerId();
-    }
-
-    @Override
-    public void setOwner(UUID id) {
-        this.tameable().setOwner(id);
-    }
-
-    @Override
-    public int getFollowState() {
-        return this.tameable().getFollowState();
-    }
-
-    @Override
-    public void setFollowState(int set) {
-        this.tameable().setFollowState(set);
     }
 
     // ---------------------------------------------------------------------------------------------

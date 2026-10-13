@@ -8,7 +8,8 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.TreasureSlime;
 
 /**
  * Treasure slime model. The original {@code ModelTreasureSlime(int)} exposed the outer gel shell when
@@ -21,7 +22,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelTreasureSlime extends HierarchicalModel<LivingEntity> {
+public class ModelTreasureSlime extends HierarchicalModel<TreasureSlime> {
 
     private final ModelPart root;
     private final ModelPart cube;
@@ -61,7 +62,7 @@ public class ModelTreasureSlime extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(TreasureSlime entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         // No animation in the original.
     }

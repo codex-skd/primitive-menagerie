@@ -9,7 +9,8 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.BrainSlime;
 
 /**
  * Brain slime model. The original {@code ModelBrainSlime(int)} selected between the outer gel shell
@@ -23,7 +24,7 @@ import net.minecraft.world.entity.LivingEntity;
  * @author Daveyx0
  * @author KodaichiZero
  */
-public class ModelBrainSlime extends HierarchicalModel<LivingEntity> {
+public class ModelBrainSlime extends HierarchicalModel<BrainSlime> {
 
     private final ModelPart root;
     private final ModelPart cube;
@@ -68,7 +69,7 @@ public class ModelBrainSlime extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(BrainSlime entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         // No animation in the original.
     }

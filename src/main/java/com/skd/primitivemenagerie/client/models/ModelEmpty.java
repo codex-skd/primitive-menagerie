@@ -8,14 +8,15 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.HauntedTool;
 
 /**
  * Empty placeholder model used by the haunted tool, mirroring the original {@code ModelEmpty}.
  *
  * @author Daveyx0
  */
-public class ModelEmpty extends HierarchicalModel<LivingEntity> {
+public class ModelEmpty extends HierarchicalModel<HauntedTool> {
 
     private final ModelPart root;
     private final ModelPart empty;
@@ -40,7 +41,7 @@ public class ModelEmpty extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(HauntedTool entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         // No animation in the original.
     }

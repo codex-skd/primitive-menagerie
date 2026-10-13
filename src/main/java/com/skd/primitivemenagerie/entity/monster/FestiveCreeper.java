@@ -3,7 +3,9 @@ package com.skd.primitivemenagerie.entity.monster;
 
 import com.skd.mobweavecore.entity.IMultiMob;
 
+import com.skd.primitivemenagerie.core.PMEntities;
 import com.skd.primitivemenagerie.core.PMLootTables;
+import com.skd.primitivemenagerie.entity.item.PrimitiveTNTPrimed;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
@@ -112,14 +114,25 @@ public class FestiveCreeper extends PrimitiveCreeper implements IMultiMob {
 
         @Override
         public void tick() {
-            // TODO(P4): spawn the ported EntityPrimitiveTNTPrimed here (power, fuse 30) aimed at the
-            // target once that projectile entity exists. Until then the goal only fires its cooldown.
             if (this.creeper.isPowered()) {
                 this.power = 3.0F;
             }
 
             if (this.target != null && --this.attackCooldown <= 0) {
-                this.creeper.playSound(SoundEvents.TNT_PRIMED, 1.0F, 1.0F);
+                if (!this.creeper.level().isClientSide) {
+                    PrimitiveTNTPrimed tnt = new PrimitiveTNTPrimed(PMEntities.PRIMITIVE_TNT_PRIMED.get(),
+                            this.creeper.level(), this.creeper.getX(), this.creeper.getY(), this.creeper.getZ(),
+                            this.creeper, this.power, 30);
+                    tnt.moveTo(this.creeper.getX(), this.creeper.getY(), this.creeper.getZ(),
+                            this.creeper.getYRot(), 0.0F);
+                    tnt.setDeltaMovement(
+                            (this.target.getX() - tnt.getX()) / 18.0D,
+                            (this.target.getY() - tnt.getY()) / 18.0D + 0.5D,
+                            (this.target.getZ() - tnt.getZ()) / 18.0D);
+                    this.creeper.level().addFreshEntity(tnt);
+                }
+
+                this.creeper.playSound(SoundEvents.TNT_PRIMED, this.creeper.getSoundVolume(), 1.0F);
                 this.attackCooldown = 60;
             }
         }

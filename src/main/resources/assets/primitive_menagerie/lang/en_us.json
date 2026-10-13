@@ -6,5 +6,9 @@
   "entity.primitive_menagerie.mother_spider": "Mother Spider",
   "entity.primitive_menagerie.baby_spider": "Baby Spider",
   "entity.primitive_menagerie.goblin": "Goblin",
-  "entity.primitive_menagerie.harpy": "Harpy"
+  "entity.primitive_menagerie.harpy": "Harpy",
+  "entity.primitive_menagerie.treasure_slime": "Treasure Slime",
+  "entity.primitive_menagerie.brain_slime": "Brain Slime",
+  "entity.primitive_menagerie.haunted_tool": "Haunted Tool",
+  "entity.primitive_menagerie.bewitched_tome": "Bewitched Tome"
 }

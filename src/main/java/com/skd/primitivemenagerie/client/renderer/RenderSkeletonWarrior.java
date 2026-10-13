@@ -1,6 +1,7 @@
 // Port of Primitive Mobs by Daveyx0 (CC BY-NC 3.0). The original work has been modified (ported to NeoForge 1.21.1).
 package com.skd.primitivemenagerie.client.renderer;
 
+import com.skd.primitivemenagerie.client.renderer.layer.LayerHeldItemCustom;
 import com.skd.primitivemenagerie.core.PMReference;
 import com.skd.primitivemenagerie.entity.monster.SkeletonWarrior;
 
@@ -28,6 +29,7 @@ public class RenderSkeletonWarrior extends HumanoidMobRenderer<SkeletonWarrior, 
                 new SkeletonModel<>(context.bakeLayer(ModelLayers.SKELETON_INNER_ARMOR)),
                 new SkeletonModel<>(context.bakeLayer(ModelLayers.SKELETON_OUTER_ARMOR)),
                 context.getModelManager()));
+        this.addLayer(new LayerHeldItemCustom<>(this));
     }
 
     @Override

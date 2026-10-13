@@ -8,7 +8,8 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.EnchantedBook;
 
 /**
  * Enchanted book model, mirroring the original {@code ModelEnchantedBook}. The pages gently flip with
@@ -16,7 +17,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelEnchantedBook extends HierarchicalModel<LivingEntity> {
+public class ModelEnchantedBook extends HierarchicalModel<EnchantedBook> {
 
     private final ModelPart root;
     private final ModelPart book1;
@@ -67,7 +68,7 @@ public class ModelEnchantedBook extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(EnchantedBook entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.book1.zRot = ageInTicks;
         this.book2.zRot = -ageInTicks;

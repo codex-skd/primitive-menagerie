@@ -74,6 +74,10 @@ entity-specific state that does not exist yet (a safe default is used so the mod
 - `ModelBrainSlime` / `ModelTreasureSlime` — the original chose the outer gel shell vs. the inner
   body with eyes by constructor argument. `TODO(entity-phase)`: the renderer (and the gel overlay
   layer) must hide `cube` or `inner_cube`/`right_eye`/`left_eye`/`mouth` accordingly.
+  **P4a**: wired. Both models now target their entity type; `RenderBrainSlime`/`RenderTreasureSlime`
+  hide `cube` and the gel layers (`LayerBrainSlimeGel`/`LayerTreasureSlimeGel`) hide the inner parts.
+  `ModelEmpty` and `ModelEnchantedBook` were also retargeted to `HauntedTool`/`EnchantedBook` so they
+  can be used by their `MobRenderer`s.
 - `ModelVoidEye` — original `ModelVoidEye(false)` hid `body1`/`body2` for the "seen" overlay.
   `TODO(entity-phase)`: the renderer must hide those parts when only the eye is drawn.
 - `ModelFlameSpewer` — original read `EntityFlameSpewer.isInDanger()` and scaled the body by the
@@ -165,6 +169,63 @@ Notes and simplifications:
 - **Loot tables** — festive/rocket/support creeper, mother spider, goblin and harpy use the ported
   `PMLootTables` ids through `getDefaultLootTable()`; skeleton warrior and the spiders keep the
   vanilla skeleton/spider loot, as in the original.
+
+## Phase P4a (slimes, tameable base, haunted/bewitched creatures, throwables)
+
+Ported: the tameable base `PrimitiveTameableMob`, the tameable slime base `TameableSlime`, the
+`TreasureSlime`, `BrainSlime`, `HauntedTool`, `EnchantedBook` (`bewitched_tome`), the item entities
+`PrimitiveThrowable` (`primitive_egg`), `ThrownBlock` (`thrown_block`), `FlameSpit` (`flame_spit`) and
+`PrimitiveTNTPrimed` (`primitive_tnt_primed`), plus the renderers/layers (`RenderBrainSlime` +
+`LayerBrainSlimeGel`, `RenderTreasureSlime` + `LayerTreasureSlimeGel` + `LayerHeldItemSlime`,
+`RenderHauntedTool` + `LayerHeldItemHaunted`, `RenderEnchantedBook`, `RenderFlyingItem`,
+`RenderThrownBlock`, `RenderPrimitiveTNTPrimed`, `LayerHeldItemCustom`) and the `en_us.json` names.
+The Festive Creeper now really throws `PrimitiveTNTPrimed` (the P3 `TODO(P4)` is closed).
+
+Notes and simplifications:
+
+- **Tameable base** — `PrimitiveSpider` now extends `PrimitiveTameableMob` (the tamed/owner/follow
+  state live in the Mobweave Core `mobweave_core:tameable` attachment, follow state `0 = sitting`).
+  The original `getTeam()`/`isOnSameTeam()` overrides have no 1.21 equivalent and are dropped. The
+  original `EntityPrimitiveTameableMob.canBeLeashedTo` is replaced by `canBeLeashed()`.
+- **TameableSlime** — the original's bespoke move helper and nested goals are ported to a custom
+  `MoveControl` plus goal classes; the sit state stops movement and keeps the look control on the
+  target. The original `EntityAIFindEntityNearestPlayer` target is replaced by
+  `NearestAttackableTargetGoal`.
+- **TreasureSlime** — `TODO(verify)`: the coloured slime landing particles of the original are
+  replaced by the vanilla slime particles; the colour tint is applied to the gel layer through vertex
+  colours instead of the removed `GlStateManager.color`, and the rainbow camouflage-dye cycle and the
+  enchantment glint overlay are not ported. The child-splitting on death is re-implemented with a
+  custom `remove` override that preserves the owner/held item (the inherited `Slime` split is
+  suppressed by dropping the size to 1 first). `getCanSpawnHere` (dark light level) is not ported
+  because spawn placements are registered in P6.
+- **BrainSlime** — the custom coloured slime particles and the particle network message are dropped
+  (vanilla slime particles are used); the sand-only spawn check is not ported (P6). The creature
+  attribute check for undead targets uses the `minecraft:undead` entity type tag (the 1.12
+  `EnumCreatureAttribute` no longer exists). `Slime.setSize` clamps the size to a minimum of 1, so the
+  original's size-0 spawn variant is not reachable.
+- **HauntedTool / EnchantedBook** — the original `EntityAIMoveTowardsRestriction` goal is omitted.
+  The Haunted Tool durability drop uses `hitByPlayer ? 1 : 0` as the looting modifier because the
+  1.21 `dropCustomDeathLoot` hook does not expose the looting level (`TODO(verify)`); the
+  `getCanSpawnHere` below-Y-40 check of the Enchanted Book is not ported (P6). The 1.12
+  `EntityMob.getCreatureAttribute` (undead) has no 1.21 override.
+- **PrimitiveThrowable** — the original selected the spawned entity by Java class through the old
+  Forge registry; here the spawned `EntityType` is supplied directly. Taming of the spawned mob uses
+  the Mobweave Core `ITameableEntity` interface (the original set up the capability explicitly).
+- **ThrownBlock / PrimitiveTNTPrimed / FlameSpit** — `ThrownBlock` is a plain `Entity` that damages
+  nearby entities on landing; `PrimitiveTNTPrimed` mirrors `PrimedTnt` with a configurable strength
+  and the `Festive Creeper tnt harms terrain` config flag; `FlameSpit` extends `SmallFireball` and
+  expires after 30 ticks. `FlameSpit` is rendered with the vanilla `ThrownItemRenderer` (the original
+  `RenderFlyingItem` returned early for it).
+- **RenderPrimitiveTNTPrimed** — the flickering white overlay of the original is not ported
+  (`TODO(verify)`); the fuse scaling and the small-charge scaling are.
+- **LayerHeldItemCustom** — only the Skeleton Warrior back-item branch is ported (the P3 TODO for the
+  back item is closed); the Grove Sprite, Filch Lizard, Lily Lurker, Trollager and Lost Miner branches
+  belong to later phases (`TODO`).
+- **LayerHeldItemSlime / LayerHeldItemHaunted** — the 1.12 "full 3D item" branch no longer exists;
+  items are split into the block and non-block cases only.
+- **Loot tables** — `TreasureSlime`, `HauntedTool` and `EnchantedBook` return `null` from
+  `getDefaultLootTable()` and drop their held/generated item through `dropCustomDeathLoot`, matching
+  the original `getLootTable() == null` + `dropFewItems`.
 
 ## Not ported
 - The Forge config GUI (`PrimitiveMobsFactoryGui`, `PrimitiveMobsGuiConfig`) is not ported; the

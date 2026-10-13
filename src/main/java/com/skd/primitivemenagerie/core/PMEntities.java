@@ -1,15 +1,23 @@
 // Port of Primitive Mobs by Daveyx0 (CC BY-NC 3.0). The original work has been modified (ported to NeoForge 1.21.1).
 package com.skd.primitivemenagerie.core;
 
+import com.skd.primitivemenagerie.entity.item.FlameSpit;
+import com.skd.primitivemenagerie.entity.item.PrimitiveTNTPrimed;
+import com.skd.primitivemenagerie.entity.item.PrimitiveThrowable;
 import com.skd.primitivemenagerie.entity.item.SpiderEgg;
+import com.skd.primitivemenagerie.entity.item.ThrownBlock;
 import com.skd.primitivemenagerie.entity.monster.BabySpider;
+import com.skd.primitivemenagerie.entity.monster.BrainSlime;
+import com.skd.primitivemenagerie.entity.monster.EnchantedBook;
 import com.skd.primitivemenagerie.entity.monster.FestiveCreeper;
 import com.skd.primitivemenagerie.entity.monster.Goblin;
 import com.skd.primitivemenagerie.entity.monster.Harpy;
+import com.skd.primitivemenagerie.entity.monster.HauntedTool;
 import com.skd.primitivemenagerie.entity.monster.MotherSpider;
 import com.skd.primitivemenagerie.entity.monster.RocketCreeper;
 import com.skd.primitivemenagerie.entity.monster.SkeletonWarrior;
 import com.skd.primitivemenagerie.entity.monster.SupportCreeper;
+import com.skd.primitivemenagerie.entity.monster.TreasureSlime;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -60,9 +68,41 @@ public final class PMEntities {
             PMRegistries.registerMob("harpy", Harpy::new, MobCategory.MONSTER, 0.8F, 1.0F,
                     Harpy::createAttributes, 0x3D3454, 0xA4936B);
 
+    public static final DeferredHolder<EntityType<?>, EntityType<TreasureSlime>> TREASURE_SLIME =
+            PMRegistries.registerMob("treasure_slime", TreasureSlime::new, MobCategory.MONSTER, 0.52F, 0.52F,
+                    TreasureSlime::createAttributes, 0xFFF399, 0xFFE332);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BrainSlime>> BRAIN_SLIME =
+            PMRegistries.registerMob("brain_slime", BrainSlime::new, MobCategory.MONSTER, 0.52F, 0.52F,
+                    BrainSlime::createAttributes, 0xC696B0, 0xD1A5BD);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<HauntedTool>> HAUNTED_TOOL =
+            PMRegistries.registerMob("haunted_tool", HauntedTool::new, MobCategory.MONSTER, 0.6F, 1.0F,
+                    HauntedTool::createAttributes, 0x493615, 0x684E1E);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<EnchantedBook>> BEWITCHED_TOME =
+            PMRegistries.registerMob("bewitched_tome", EnchantedBook::new, MobCategory.MONSTER, 0.5F, 1.0F,
+                    EnchantedBook::createAttributes, 0xB77A35, 0xD0D0D0);
+
     /** Thrown spider egg projectile; registered with the original custom tracking parameters. */
     public static final DeferredHolder<EntityType<?>, EntityType<SpiderEgg>> SPIDER_EGG =
             PMRegistries.registerSimpleEntity("spider_egg", SpiderEgg::new, MobCategory.MISC, 0.25F, 0.25F, 64, 20);
+
+    /** Base thrown primitive egg projectile, used by the mystery eggs in P6. */
+    public static final DeferredHolder<EntityType<?>, EntityType<PrimitiveThrowable>> PRIMITIVE_EGG =
+            PMRegistries.registerSimpleEntity("primitive_egg", PrimitiveThrowable::new, MobCategory.MISC, 0.25F, 0.25F, 64, 20);
+
+    /** Thrown block projectile. */
+    public static final DeferredHolder<EntityType<?>, EntityType<ThrownBlock>> THROWN_BLOCK =
+            PMRegistries.registerSimpleEntity("thrown_block", ThrownBlock::new, MobCategory.MISC, 1.0F, 1.0F, 64, 20);
+
+    /** Flame spit projectile fired by the Flame Spewer. */
+    public static final DeferredHolder<EntityType<?>, EntityType<FlameSpit>> FLAME_SPIT =
+            PMRegistries.registerSimpleEntity("flame_spit", FlameSpit::new, MobCategory.MISC, 0.3125F, 0.3125F, 64, 1);
+
+    /** Primed primitive TNT thrown by the Festive Creeper. */
+    public static final DeferredHolder<EntityType<?>, EntityType<PrimitiveTNTPrimed>> PRIMITIVE_TNT_PRIMED =
+            PMRegistries.registerSimpleEntity("primitive_tnt_primed", PrimitiveTNTPrimed::new, MobCategory.MISC, 0.98F, 0.98F, 64, 20);
 
     private PMEntities() {}
 
