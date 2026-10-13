@@ -1,0 +1,23 @@
+Primitive Menagerie
+===================
+
+Primitive Menagerie is a port (Adaptation) of Primitive Mobs (Minecraft 1.12.2, version 1.2.3) to NeoForge 1.21.1.
+The original work has been modified.
+Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported license (see LICENSE).
+Non-commercial use only.
+
+Original work
+-------------
+Primitive Mobs - Copyright Daveyx0.
+Original author: Daveyx0.
+Original project page: https://www.curseforge.com/minecraft/mc-mods/primitive-mobs
+
+Credits given by the original mod
+---------------------------------
+- KodaichiZero: spider family, creeper models (KodasCreepers) and brain slime models.
+- Gibea: traveling merchant model.
+- TehPhailed: blazing juggernaut model.
+- Choonster: 1.12 code reference.
+TODO before publishing: confirm that the license under which these models were contributed allows this adaptation.
+
+This port is not affiliated with, sponsored by or endorsed by the original author.
