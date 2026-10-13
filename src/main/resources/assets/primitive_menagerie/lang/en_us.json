@@ -10,5 +10,12 @@
   "entity.primitive_menagerie.treasure_slime": "Treasure Slime",
   "entity.primitive_menagerie.brain_slime": "Brain Slime",
   "entity.primitive_menagerie.haunted_tool": "Haunted Tool",
-  "entity.primitive_menagerie.bewitched_tome": "Bewitched Tome"
+  "entity.primitive_menagerie.bewitched_tome": "Bewitched Tome",
+  "entity.primitive_menagerie.blazing_juggernaut": "Blazing Juggernaut",
+  "entity.primitive_menagerie.lily_lurker": "Lily Lurker",
+  "entity.primitive_menagerie.trollager": "Trollager",
+  "entity.primitive_menagerie.mimic": "Mimic",
+  "entity.primitive_menagerie.flame_spewer": "Flame Spewer",
+  "entity.primitive_menagerie.void_eye": "Void Eye",
+  "entity.primitive_menagerie.yeti": "Yeti"
 }

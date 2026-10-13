@@ -8,19 +8,17 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.VoidEye;
 
 /**
  * Void eye model, mirroring the original {@code ModelVoidEye(boolean)}. The original could hide the
  * two body shells (used by the "seen" overlay layer); all parts share this single layer in 1.21 and
- * the renderer toggles their visibility.
- *
- * <p>TODO(entity-phase): the renderer must hide {@code body1}/{@code body2} when only the eye is
- * needed (original {@code ModelVoidEye(false)}).</p>
+ * the renderer/layer toggle their visibility.
  *
  * @author Daveyx0
  */
-public class ModelVoidEye extends HierarchicalModel<LivingEntity> {
+public class ModelVoidEye extends HierarchicalModel<VoidEye> {
 
     private final ModelPart root;
     private final ModelPart body1;
@@ -55,7 +53,7 @@ public class ModelVoidEye extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(VoidEye entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.body1.zRot -= 0.0075F;
         this.body2.zRot += 0.0075F;

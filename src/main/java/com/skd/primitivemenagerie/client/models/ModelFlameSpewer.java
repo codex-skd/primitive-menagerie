@@ -9,20 +9,16 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.FlameSpewer;
 
 /**
  * Flame spewer model, mirroring the original {@code ModelFlameSpewer}. Only the regular (non-lava)
- * variant is represented here; the lava skin is a separate render layer whose different texture
- * offsets are not part of this phase.
- *
- * <p>TODO(entity-phase): the original scaled the body with the entity attack signal and read
- * {@code EntityFlameSpewer.isInDanger()}; that state does not exist yet. The danger animation
- * currently always uses the calm path and {@code isInDanger} returns a safe default.</p>
+ * variant is represented here; the lava skin is a separate render layer with different UVs.
  *
  * @author Daveyx0
  */
-public class ModelFlameSpewer extends HierarchicalModel<LivingEntity> {
+public class ModelFlameSpewer extends HierarchicalModel<FlameSpewer> {
 
     private final ModelPart root;
     private final ModelPart body;
@@ -57,19 +53,50 @@ public class ModelFlameSpewer extends HierarchicalModel<LivingEntity> {
         return LayerDefinition.create(mesh, 64, 64);
     }
 
+    /**
+     * Lava-skin variant of the layer, mirroring the original {@code ModelFlameSpewer(32, 512, true,
+     * true)}: same geometry with the lava texture offsets ({@code 32x512}, mouth {@code 16,0},
+     * tentacles {@code 0,16}).
+     */
+    public static LayerDefinition createLavaLayer() {
+        MeshDefinition mesh = new MeshDefinition();
+        PartDefinition root = mesh.getRoot();
+        root.addOrReplaceChild("body",
+                CubeListBuilder.create().texOffs(0, 0).addBox(-7.0F, -16.0F, -7.0F, 14.0F, 16.0F, 14.0F),
+                PartPose.offset(0.0F, 21.0F, 0.0F));
+        root.addOrReplaceChild("mouth",
+                CubeListBuilder.create().texOffs(16, 0).addBox(-2.0F, -5.0F, -10.0F, 4.0F, 4.0F, 4.0F),
+                PartPose.offsetAndRotation(0.0F, 21.0F, 0.0F, 0.1570796F, 0.0F, 0.0F));
+        for (int i = 0; i < 8; i++) {
+            root.addOrReplaceChild("tentacle" + i,
+                    CubeListBuilder.create().texOffs(0, 16).addBox(-2.0F, 0.0F, -26.0F, 4.0F, 4.0F, 24.0F),
+                    PartPose.offsetAndRotation(0.0F, 18.0F, 0.0F, 0.4537856F,
+                            (float) Math.toRadians(22.5 + 45 * i), 0.0F));
+        }
+        return LayerDefinition.create(mesh, 32, 512);
+    }
+
     @Override
     public ModelPart root() {
         return this.root;
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(FlameSpewer entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.body.yRot = netHeadYaw / (180F / (float) Math.PI);
         this.mouth.yRot = this.body.yRot;
 
-        // TODO(entity-phase): read EntityFlameSpewer.isInDanger() once the entity exists.
-        boolean inDanger = false;
+        // The original render() scaled the body by the attack signal and the mouth with a subtle bob.
+        float f = 1.0F + entity.getAttackSignal();
+        this.body.y = 21.0F + (-f + 0.9F) * 16.0F;
+        this.body.xScale = this.body.yScale = this.body.zScale = f;
+
+        float e = Mth.sin((float) entity.tickCount * 0.5F) * 0.03F + 1.0F;
+        this.mouth.y = 21.0F + (-0.1F) * 16.0F;
+        this.mouth.xScale = this.mouth.yScale = this.mouth.zScale = e;
+
+        boolean inDanger = entity.isInDanger();
         for (int i = 0; i < this.tentacles.length; i++) {
             if (this.offset[i] == 0.0F) {
                 this.offset[i] = (entity.getRandom().nextFloat() - entity.getRandom().nextFloat()) + 0.01F;

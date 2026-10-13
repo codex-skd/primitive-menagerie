@@ -25,6 +25,7 @@ import net.minecraft.world.entity.ai.goal.SwellGoal;
 import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.Ocelot;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -33,12 +34,8 @@ import net.minecraft.world.phys.AABB;
 
 /**
  * Support Creeper, ported from {@code EntitySupportCreeper}. It buffs nearby hostile mobs (or its
- * owner) with fire resistance, strength and speed, and becomes aggressive once badly hurt.
- *
- * <p>TODO(verify): the original also powered up nearby vanilla creepers via
- * {@code onStruckByLightning} and flagged a nearby {@code EntityTrollager} as supported. Powering a
- * vanilla creeper has no public API in 1.21 and the Trollager is not ported yet, so those two side
- * effects are left out.</p>
+ * owner) with fire resistance, strength and speed, powers vanilla creepers and supports the
+ * Trollager, and becomes aggressive once badly hurt.
  *
  * @author Daveyx0
  */
@@ -173,20 +170,55 @@ public class SupportCreeper extends PrimitiveCreeper {
                 this.creeper.getNavigation().moveTo(this.mobIdol, 1.0D);
             }
 
-            if (this.mobIdol.getEffect(MobEffects.FIRE_RESISTANCE) == null) {
-                this.mobIdol.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, this.strength));
-            }
+            if (this.mobIdol instanceof Creeper vanillaCreeper) {
+                if (!vanillaCreeper.isPowered() && !this.creeper.level().isClientSide) {
+                    powerCreeper(vanillaCreeper);
+                }
 
-            if (this.mobIdol.getEffect(MobEffects.DAMAGE_BOOST) == null) {
-                this.mobIdol.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, this.strength));
-            }
+                if (vanillaCreeper.getEffect(MobEffects.FIRE_RESISTANCE) == null) {
+                    vanillaCreeper.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, this.strength));
+                }
 
-            if (this.mobIdol.getEffect(MobEffects.MOVEMENT_SPEED) == null) {
-                this.mobIdol.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, this.strength));
+                if (this.creeper.getEffect(MobEffects.FIRE_RESISTANCE) == null) {
+                    this.creeper.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, this.strength));
+                }
+            } else {
+                if (this.mobIdol instanceof Trollager trollager) {
+                    trollager.isBeingSupported = true;
+                }
+
+                if (this.mobIdol.getEffect(MobEffects.DAMAGE_BOOST) == null) {
+                    this.mobIdol.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 60, this.strength));
+                }
+
+                if (this.mobIdol.getEffect(MobEffects.MOVEMENT_SPEED) == null) {
+                    this.mobIdol.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, this.strength));
+                }
+
+                if (this.mobIdol.getEffect(MobEffects.FIRE_RESISTANCE) == null) {
+                    this.mobIdol.addEffect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 60, this.strength));
+                }
             }
 
             if (this.creeper.getEffect(MobEffects.MOVEMENT_SPEED) == null) {
                 this.creeper.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 60, this.strength));
+            }
+        }
+
+        /**
+         * Powers a vanilla creeper. The original called {@code Creeper.onStruckByLightning(null)}; in
+         * 1.21 there is no public API for this, so the private {@code DATA_IS_POWERED} synched data is
+         * set reflectively. TODO(verify): replace with a public API if one is added.
+         */
+        @SuppressWarnings("unchecked")
+        private static void powerCreeper(Creeper creeper) {
+            try {
+                java.lang.reflect.Field field = Creeper.class.getDeclaredField("DATA_IS_POWERED");
+                field.setAccessible(true);
+                net.minecraft.network.syncher.EntityDataAccessor<Boolean> accessor =
+                        (net.minecraft.network.syncher.EntityDataAccessor<Boolean>) field.get(null);
+                creeper.getEntityData().set(accessor, true);
+            } catch (ReflectiveOperationException ignored) {
             }
         }
     }

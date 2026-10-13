@@ -22,6 +22,7 @@ public final class PMModelLayers {
     public static final ModelLayerLocation ENCHANTED_BOOK = layer("enchanted_book");
     public static final ModelLayerLocation VOID_EYE = layer("void_eye");
     public static final ModelLayerLocation FLAME_SPEWER = layer("flame_spewer");
+    public static final ModelLayerLocation FLAME_SPEWER_LAVA = layer("flame_spewer_lava");
     public static final ModelLayerLocation BLAZING_JUGGERNAUT = layer("blazing_juggernaut");
     public static final ModelLayerLocation HARPY = layer("harpy");
     public static final ModelLayerLocation LILY_LURKER = layer("lily_lurker");

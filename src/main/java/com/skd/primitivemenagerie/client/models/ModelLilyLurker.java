@@ -9,7 +9,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.LilyLurker;
 
 /**
  * Lily lurker model, mirroring the original {@code ModelLilyLurker}. The two root parts only show
@@ -17,7 +18,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelLilyLurker extends HierarchicalModel<LivingEntity> {
+public class ModelLilyLurker extends HierarchicalModel<LilyLurker> {
 
     private final ModelPart root;
     private final ModelPart body1;
@@ -77,7 +78,7 @@ public class ModelLilyLurker extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(LilyLurker entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.fin1.yRot = Mth.cos(limbSwing * 0.6662F * 2.0F + (float) Math.PI) * 0.6F * limbSwingAmount - 0.6806784F;
         this.fin2.yRot = -Mth.cos(limbSwing * 0.6662F * 2.0F + (float) Math.PI) * 0.6F * limbSwingAmount - 2.460914F;

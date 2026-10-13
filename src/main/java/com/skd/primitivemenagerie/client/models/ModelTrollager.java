@@ -9,19 +9,16 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.Trollager;
 
 /**
  * Trollager model, mirroring the original {@code ModelTrollager} and its throwing/crushing/melee
  * animation state machine.
  *
- * <p>TODO(entity-phase): the original read {@code EntityTrollager.getAnimationState()},
- * {@code getAnimVar()} and {@code isStone()}. Those do not exist yet; the state defaults to the idle
- * branch with safe values, keeping every branch's maths intact for when the entity is ported.</p>
- *
  * @author Daveyx0
  */
-public class ModelTrollager extends HierarchicalModel<LivingEntity> {
+public class ModelTrollager extends HierarchicalModel<Trollager> {
 
     private final ModelPart root;
     private final ModelPart head;
@@ -85,13 +82,17 @@ public class ModelTrollager extends HierarchicalModel<LivingEntity> {
         return this.root;
     }
 
+    /** @return the block-holder arm part, used by the held-item layer to position the thrown block. */
+    public ModelPart getBlockHolder() {
+        return this.blockHolder;
+    }
+
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Trollager entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
-        // TODO(entity-phase): replace these safe defaults with the EntityTrollager state.
-        int animationState = 0;
-        float animVar = 0.0F;
-        boolean isStone = false;
+        int animationState = entity.getAnimationState();
+        float animVar = entity.getAnimVar();
+        boolean isStone = entity.isStone();
 
         float speed = 1f;
 

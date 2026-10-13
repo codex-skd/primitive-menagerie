@@ -8,19 +8,20 @@ import net.minecraft.client.model.geom.builders.CubeListBuilder;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.Yeti;
 
 /**
  * Yeti model, mirroring the original {@code ModelYeti}. The hide parts are the "wool" overlay that
  * covers the body when the yeti is not enraged.
  *
- * <p>TODO(entity-phase): the original attack timer ({@code EntityYeti.getAttackTimer()}) is disabled
- * in the source, so {@code i} is always zero and the idle branch is taken. The original also used the
- * render scale factor (0.0625F) in the arm maths; that constant is kept here.</p>
+ * <p>The original attack timer ({@code EntityYeti.getAttackTimer()}) is disabled in the source, so
+ * {@code i} is always zero and the idle branch is taken. The original also used the render scale
+ * factor (0.0625F) in the arm maths; that constant is kept here.</p>
  *
  * @author Daveyx0
  */
-public class ModelYeti extends HierarchicalModel<LivingEntity> {
+public class ModelYeti extends HierarchicalModel<Yeti> {
 
     private final ModelPart root;
     private final ModelPart head;
@@ -100,9 +101,9 @@ public class ModelYeti extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Yeti entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
-        // TODO(entity-phase): EntityYeti.getAttackTimer() is disabled in the original source, so i = 0.
+        // The attack timer is disabled in the original source, so i = 0.
         float i = 0.0F;
         float scaleFactor = 0.0625F;
 
