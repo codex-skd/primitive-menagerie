@@ -1,7 +1,10 @@
 // Port of Primitive Mobs by Daveyx0 (CC BY-NC 3.0). The original work has been modified (ported to NeoForge 1.21.1).
 package com.skd.primitivemenagerie.core;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 /**
  * Loot table ids of the mod, replacing the original {@code PrimitiveMobsLootTables}. In 1.21 loot
@@ -38,4 +41,9 @@ public final class PMLootTables {
     public static final ResourceLocation TREASURESLIME_SPAWN = PMReference.id("entities/special/treasure_slime");
 
     private PMLootTables() {}
+
+    /** Wraps a loot table id into the {@link ResourceKey} required by {@code LivingEntity#getLootTable()}. */
+    public static ResourceKey<LootTable> key(ResourceLocation id) {
+        return ResourceKey.create(Registries.LOOT_TABLE, id);
+    }
 }

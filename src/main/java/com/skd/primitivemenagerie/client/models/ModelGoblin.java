@@ -10,7 +10,8 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.Goblin;
 
 /**
  * Goblin model, mirroring the original {@code ModelGoblin}, which extended the vanilla biped model.
@@ -18,7 +19,7 @@ import net.minecraft.world.entity.LivingEntity;
  *
  * @author Daveyx0
  */
-public class ModelGoblin extends HierarchicalModel<LivingEntity> {
+public class ModelGoblin extends HierarchicalModel<Goblin> {
 
     private final ModelPart root;
     private final ModelPart bipedHead;
@@ -104,7 +105,7 @@ public class ModelGoblin extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Goblin entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         // Base biped animation (original inherited it from ModelBiped).
         this.bipedHead.yRot = netHeadYaw * ((float) Math.PI / 180.0F);

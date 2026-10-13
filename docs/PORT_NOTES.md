@@ -68,6 +68,9 @@ entity-specific state that does not exist yet (a safe default is used so the mod
 
 - `ModelPrimitiveCreeper` — the original render method scaled the head/body for children; in 1.21
   that is renderer-side. `TODO(entity-phase)`: apply the baby scale in the renderer.
+  **P3**: wired. The model now targets `PrimitiveCreeper`; the renderer (`RenderPrimitiveCreeper`)
+  scales babies uniformly by `0.5` (the original scaled head and body separately — a simplification
+  that only matters for the thrown-egg spawns added in P6).
 - `ModelBrainSlime` / `ModelTreasureSlime` — the original chose the outer gel shell vs. the inner
   body with eyes by constructor argument. `TODO(entity-phase)`: the renderer (and the gel overlay
   layer) must hide `cube` or `inner_cube`/`right_eye`/`left_eye`/`mouth` accordingly.
@@ -79,11 +82,14 @@ entity-specific state that does not exist yet (a safe default is used so the mod
   separate render layer with different UVs and is not covered by this layer.
 - `ModelHarpy` — original read `EntityHarpy.isFlying()`. `TODO(entity-phase)`: restore the flying
   pose (adds `2π/9` to both legs) and the sitting state.
+  **P3**: wired. The model now targets `Harpy` and reads `isFlying()`; the sitting state is not used
+  because the ported entity has no sit state.
 - `ModelYeti` — `EntityYeti.getAttackTimer()` is disabled in the original source, so `i` is always
   zero and the idle branch is used. The original used the render scale factor (`0.0625F`) in the arm
   maths; that constant is kept. `TODO(entity-phase)`: restore the attack timer branch if re-enabled.
 - `ModelGoblin` — the original extended the vanilla biped model; the inherited head yaw/pitch and
   arm/leg walk are reproduced by hand. The default biped headwear overlay is kept as a part.
+  **P3**: the model now targets `Goblin` so it can be used by the goblin renderer.
 - `ModelTrollager` — original read `EntityTrollager.getAnimationState()`, `getAnimVar()` and
   `isStone()`. `TODO(entity-phase)`: restore the throwing/crushing/melee state machine; it currently
   runs the idle branch with the entity state defaulted.
@@ -108,7 +114,58 @@ entity-specific state that does not exist yet (a safe default is used so the mod
 - `ModelBlazingJuggernaut` — the original `func_78104_a()` (returns 8) was only used by the
   renderer for the stick count/scale; not needed by the model.
 
-## Not ported
+## Phase P3 (simple combat creatures)
 
+Ported: creepers (base `PrimitiveCreeper`, `FestiveCreeper`, `RocketCreeper`, `SupportCreeper`),
+spiders (base `PrimitiveSpider`, `BabySpider`, `MotherSpider`), `SkeletonWarrior`, `Goblin`,
+`Harpy`, the `SpiderEgg` projectile, plus the renderers/layers
+(`RenderPrimitiveCreeper` + `LayerPrimitiveCreeperCharge`, `RenderBabySpider` + `LayerBabySpiderEyes`,
+`RenderMotherSpider` + `LayerPrimitiveSpiderEyes`, `RenderSkeletonWarrior`, `RenderGoblin`,
+`RenderHarpy`) and the `en_us.json` names. Entity types are declared in `core/PMEntities` and
+registered through the `PMRegistries` helpers; attributes are supplied lazily (as a
+`Supplier<AttributeSupplier.Builder>`) because evaluating a NeoForge attribute builder during registry
+filling fails on unbound attributes such as `neoforge:swim_speed`.
+
+Notes and simplifications:
+
+- **Spawn placements** — none of these creatures overrode the 1.12 spawn placement logic
+  (`getCanSpawnHere`/`isValidLightLevel`), so no `RegisterSpawnPlacementsEvent` entries were added.
+  The actual biome spawn entries are registered in P6.
+- **Config enable flags** — the entity types are always registered so existing worlds do not break;
+  the per-mob enable flags only gate the spawn entries registered in P6.
+- `isCreatureType(MONSTER) == false` (the original excluded these mobs from the monster spawn cap)
+  cannot be expressed per instance in 1.21; the entities keep the `MONSTER` spawn category.
+- **Tameable base** — `PrimitiveSpider` implements the Mobweave Core `ITameableEntity` interface by
+  delegating to the `mobweave_core:tameable` attachment, so the ported owner goals
+  (`CustomFollowOwnerGoal`, `CustomOwnerHurtByTargetGoal`, `CustomOwnerHurtTargetGoal`) work. The
+  original `EntityPrimitiveTameableMob` sit flag is replaced by follow state `0 = sitting`.
+- **FestiveCreeper** — the TNT throw goal is ported but does not spawn anything yet:
+  `TODO(P4)` spawn the ported `EntityPrimitiveTNTPrimed`. The creeper cannot explode (its swell is
+  permanently disabled), matching the original.
+- **RocketCreeper** — the original shadowed the vanilla fuse with its own `timeSinceIgnited`; here the
+  vanilla swell state is reused (`setSwellDir(-1)` to cancel). `mobGriefing` is respected through
+  `ExplosionInteraction.MOB`.
+- **SupportCreeper** — `TODO(verify)`: powering nearby vanilla creepers (no public API in 1.21) and
+  flagging a nearby Trollager (not ported yet) are omitted; the effect buffing is ported.
+- **MotherSpider** — the original shared its navigation path with the riding baby; the ported version
+  only syncs the movement speed. The original also discarded itself when the spider family was
+  disabled, which is unnecessary because the spawn entries are gated in P6.
+- **BabySpider** — `isMovementBlocked` (sitting) is not ported; the custom `travel` steering is
+  replaced by the vanilla `getControllingPassenger`/`getRiddenInput`/`getRiddenSpeed` hooks. The eye
+  colour is stored but `LayerBabySpiderEyes` renders the emissive texture untinted (the original
+  tinted it per dye colour) — `TODO(verify)`.
+- **SkeletonWarrior** — `reassessWeaponGoal` is a no-op because the ported
+  `EntityAISwitchBetweenRangedAndMelee` and `EntityAISwitchWeapons` goals handle the weapon switching.
+  The original back-item render layer (`LayerHeldItemCustom`) is not ported yet (`TODO`); `getBackItem`
+  is kept for it.
+- **Harpy** — the bespoke `EntityHarpyFlyHelper` is replaced by the `FlyingMoveControl` inherited from
+  `MMFlyingMob`; the original's entity-collision override is not ported.
+- **SpiderEgg** — `TODO(P6)`: drop the ported spider eggshell item (not registered yet) and let the
+  throwing item set the spawn chance (default `8` is used meanwhile).
+- **Loot tables** — festive/rocket/support creeper, mother spider, goblin and harpy use the ported
+  `PMLootTables` ids through `getDefaultLootTable()`; skeleton warrior and the spiders keep the
+  vanilla skeleton/spider loot, as in the original.
+
+## Not ported
 - The Forge config GUI (`PrimitiveMobsFactoryGui`, `PrimitiveMobsGuiConfig`) is not ported; the
   config screen is generated by NeoForge from `PMConfig`'s `ModConfigSpec`.

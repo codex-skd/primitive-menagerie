@@ -23,7 +23,15 @@ import com.skd.primitivemenagerie.client.models.ModelTrollager;
 import com.skd.primitivemenagerie.client.models.ModelVoidEye;
 import com.skd.primitivemenagerie.client.models.ModelYeti;
 import com.skd.primitivemenagerie.client.models.PMModelLayers;
+import com.skd.primitivemenagerie.client.renderer.RenderBabySpider;
+import com.skd.primitivemenagerie.client.renderer.RenderGoblin;
+import com.skd.primitivemenagerie.client.renderer.RenderHarpy;
+import com.skd.primitivemenagerie.client.renderer.RenderMotherSpider;
+import com.skd.primitivemenagerie.client.renderer.RenderPrimitiveCreeper;
+import com.skd.primitivemenagerie.client.renderer.RenderSkeletonWarrior;
+import com.skd.primitivemenagerie.core.PMEntities;
 
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
@@ -41,6 +49,19 @@ public final class PMClientSetup {
     /** Registers the client listeners on the mod event bus. */
     public static void register(IEventBus modEventBus) {
         modEventBus.addListener(PMClientSetup::onRegisterLayerDefinitions);
+        modEventBus.addListener(PMClientSetup::onRegisterRenderers);
+    }
+
+    private static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(PMEntities.ROCKET_CREEPER.get(), RenderPrimitiveCreeper::new);
+        event.registerEntityRenderer(PMEntities.FESTIVE_CREEPER.get(), RenderPrimitiveCreeper::new);
+        event.registerEntityRenderer(PMEntities.SUPPORT_CREEPER.get(), RenderPrimitiveCreeper::new);
+        event.registerEntityRenderer(PMEntities.SKELETON_WARRIOR.get(), RenderSkeletonWarrior::new);
+        event.registerEntityRenderer(PMEntities.MOTHER_SPIDER.get(), RenderMotherSpider::new);
+        event.registerEntityRenderer(PMEntities.BABY_SPIDER.get(), RenderBabySpider::new);
+        event.registerEntityRenderer(PMEntities.GOBLIN.get(), RenderGoblin::new);
+        event.registerEntityRenderer(PMEntities.HARPY.get(), RenderHarpy::new);
+        event.registerEntityRenderer(PMEntities.SPIDER_EGG.get(), ThrownItemRenderer::new);
     }
 
     private static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {

@@ -10,20 +10,20 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.PrimitiveCreeper;
 
 /**
  * Primitive creeper model, shared by every creeper variant of the mod. The geometry matches the
  * original {@code ModelPrimitiveCreeper}, which extended the vanilla creeper model.
  *
- * <p>The original render method scaled the head and body down for children; that scaling is handled
- * by the (not yet ported) renderer in 1.21, so this model only carries the geometry and the leg/head
- * animation.</p>
+ * <p>The original render method scaled the head and body down for children; in 1.21 that is handled
+ * by the renderer, so this model only carries the geometry and the leg/head animation.</p>
  *
  * @author Daveyx0
  * @author KodaichiZero
  */
-public class ModelPrimitiveCreeper extends HierarchicalModel<LivingEntity> {
+public class ModelPrimitiveCreeper extends HierarchicalModel<PrimitiveCreeper> {
 
     private final ModelPart root;
     private final ModelPart head;
@@ -66,7 +66,7 @@ public class ModelPrimitiveCreeper extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(PrimitiveCreeper entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         this.head.yRot = netHeadYaw * ((float) Math.PI / 180.0F);
         this.head.xRot = headPitch * ((float) Math.PI / 180.0F);

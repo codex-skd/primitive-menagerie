@@ -9,19 +9,20 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.LivingEntity;
+
+import com.skd.primitivemenagerie.entity.monster.Harpy;
 
 /**
  * Harpy model, mirroring the original {@code ModelHarpy}. The original split its animation between
  * {@code setRotationAngles} and {@code setLivingAnimations}; both are merged into {@code setupAnim}
  * here.
  *
- * <p>TODO(entity-phase): the original flew with {@code EntityHarpy.isFlying()}. That state does not
- * exist yet, so the model always uses the standing pose with a safe default.</p>
+ * <p>The original flew with {@code EntityHarpy.isFlying()}; that state is read from the ported
+ * {@link Harpy} entity.</p>
  *
  * @author Daveyx0
  */
-public class ModelHarpy extends HierarchicalModel<LivingEntity> {
+public class ModelHarpy extends HierarchicalModel<Harpy> {
 
     private enum State {
         FLYING,
@@ -93,15 +94,14 @@ public class ModelHarpy extends HierarchicalModel<LivingEntity> {
     }
 
     @Override
-    public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks,
+    public void setupAnim(Harpy entity, float limbSwing, float limbSwingAmount, float ageInTicks,
             float netHeadYaw, float headPitch) {
         // setLivingAnimations
         this.body.xRot = 0.2443461F;
         this.legLeft.xRot = 0.0F;
         this.legRight.xRot = 0.0F;
 
-        // TODO(entity-phase): read EntityHarpy.isFlying() once the entity exists.
-        boolean flying = false;
+        boolean flying = entity.isFlying();
         if (flying) {
             this.legLeft.xRot += ((float) Math.PI * 2F / 9F);
             this.legRight.xRot += ((float) Math.PI * 2F / 9F);

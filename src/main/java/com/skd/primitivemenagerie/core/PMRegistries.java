@@ -3,11 +3,13 @@ package com.skd.primitivemenagerie.core;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 import com.skd.primitivemenagerie.PrimitiveMenagerie;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -48,7 +50,7 @@ public final class PMRegistries {
     private static final int DEFAULT_UPDATE_INTERVAL = 3;
 
     /** Attribute suppliers keyed by the entity type holder they belong to. */
-    private static final Map<DeferredHolder<EntityType<?>, ?>, AttributeSupplier.Builder> ATTRIBUTES = new LinkedHashMap<>();
+    private static final Map<DeferredHolder<EntityType<?>, ?>, Supplier<AttributeSupplier.Builder>> ATTRIBUTES = new LinkedHashMap<>();
 
     private PMRegistries() {}
 
@@ -61,6 +63,8 @@ public final class PMRegistries {
 
         // Force the item registry class to initialise so its deferred entries are created.
         PMItems.register();
+        // Force the entity registry class to initialise so its deferred entries are created.
+        PMEntities.register();
     }
 
     /**
@@ -80,10 +84,13 @@ public final class PMRegistries {
     /**
      * Registers an entity type and records the supplied attribute builder so it is applied on
      * {@link EntityAttributeCreationEvent}. Pass {@code null} for an entity without attributes.
+     *
+     * <p>The builder is supplied lazily: evaluating it during registry filling would touch NeoForge
+     * attributes that are not bound yet.</p>
      */
     public static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> registerEntity(
             String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height,
-            AttributeSupplier.Builder attributes) {
+            Supplier<AttributeSupplier.Builder> attributes) {
         DeferredHolder<EntityType<?>, EntityType<T>> holder = ENTITIES.register(name,
                 () -> EntityType.Builder.of(factory, category)
                         .sized(width, height)
@@ -96,6 +103,20 @@ public final class PMRegistries {
         }
 
         return holder;
+    }
+
+    /**
+     * Registers an entity type without attributes or spawn egg, for non-{@link Mob} entities such as
+     * projectiles. Tracking parameters mirror the original {@code addCustomEntities(...)} values.
+     */
+    public static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> registerSimpleEntity(
+            String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height,
+            int trackingRange, int updateInterval) {
+        return ENTITIES.register(name, () -> EntityType.Builder.of(factory, category)
+                .sized(width, height)
+                .clientTrackingRange(trackingRange)
+                .updateInterval(updateInterval)
+                .build(PMReference.MODID + ":" + name));
     }
 
     /**
@@ -115,22 +136,22 @@ public final class PMRegistries {
      */
     public static <T extends Mob> DeferredHolder<EntityType<?>, EntityType<T>> registerMob(
             String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height,
-            AttributeSupplier.Builder attributes, int backgroundEggColor, int foregroundEggColor) {
+            Supplier<AttributeSupplier.Builder> attributes, int backgroundEggColor, int foregroundEggColor) {
         DeferredHolder<EntityType<?>, EntityType<T>> holder = registerEntity(name, factory, category, width, height, attributes);
         registerSpawnEgg(name, holder, backgroundEggColor, foregroundEggColor);
         return holder;
     }
 
     /** @return the recorded attribute builders, keyed by their entity type holder */
-    public static Map<DeferredHolder<EntityType<?>, ?>, AttributeSupplier.Builder> getAttributes() {
+    public static Map<DeferredHolder<EntityType<?>, ?>, Supplier<AttributeSupplier.Builder>> getAttributes() {
         return ATTRIBUTES;
     }
 
     private static void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-        ATTRIBUTES.forEach((holder, builder) -> {
+        ATTRIBUTES.forEach((holder, supplier) -> {
             @SuppressWarnings("unchecked")
             EntityType<? extends LivingEntity> type = (EntityType<? extends LivingEntity>) holder.get();
-            event.put(type, builder.build());
+            event.put(type, supplier.get().build());
         });
 
         PrimitiveMenagerie.LOGGER.debug("Registered {} entity attribute suppliers", ATTRIBUTES.size());
