@@ -19,14 +19,12 @@ import net.minecraft.world.phys.HitResult;
  * Thrown spider egg, ported from {@code EntitySpiderEgg}. On impact it drops the eggshell and has a
  * chance to spawn a baby spider tamed to the thrower.
  *
- * <p>TODO(P6): the original dropped the {@code SPIDER_EGGSHELL} item, which is not registered yet.
- * TODO(P6): the throwing item sets the spawn chance; until it exists the default value is used.</p>
- *
  * @author Daveyx0
  */
 public class SpiderEgg extends ThrowableItemProjectile {
 
     private int spawnChance = 8;
+    private Item defaultItem = PMItems.SPIDER_EGG.get();
 
     public SpiderEgg(EntityType<? extends SpiderEgg> type, Level level) {
         super(type, level);
@@ -44,9 +42,14 @@ public class SpiderEgg extends ThrowableItemProjectile {
         this.spawnChance = spawnChance;
     }
 
+    /** Sets the item rendered by the projectile. */
+    public void setDefaultItem(Item item) {
+        this.defaultItem = item;
+    }
+
     @Override
     protected Item getDefaultItem() {
-        return PMItems.SPIDER_EGG.get();
+        return this.defaultItem;
     }
 
     @Override
@@ -73,6 +76,8 @@ public class SpiderEgg extends ThrowableItemProjectile {
         super.onHit(result);
 
         if (!this.level().isClientSide) {
+            this.spawnAtLocation(PMItems.SPIDER_EGGSHELL.get());
+
             if (this.random.nextInt(Math.max(1, this.spawnChance)) == 0) {
                 BabySpider baby = PMEntities.BABY_SPIDER.get().create(this.level());
 

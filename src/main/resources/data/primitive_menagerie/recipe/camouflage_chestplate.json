@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    { "item": "primitive_menagerie:camouflage_dye" },
+    { "item": "minecraft:leather_chestplate" }
+  ],
+  "result": {
+    "id": "primitive_menagerie:camouflage_chestplate",
+    "count": 1
+  }
+}

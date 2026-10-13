@@ -23,6 +23,10 @@ public class PrimitiveMenagerie {
         PMRegistries.register(modEventBus);
         com.skd.primitivemenagerie.network.PMNetwork.register(modEventBus);
 
+        com.skd.primitivemenagerie.core.PMSpawnRegistry.register();
+        com.skd.primitivemenagerie.core.PMTameableEntries.registerTameables();
+        com.skd.primitivemenagerie.core.PMEvents.register();
+
         if (FMLEnvironment.dist == Dist.CLIENT) {
             com.skd.primitivemenagerie.client.PMClientSetup.register(modEventBus);
         }

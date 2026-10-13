@@ -3,13 +3,20 @@ package com.skd.primitivemenagerie.entity.monster;
 
 import com.skd.mobweavecore.entity.IMultiMob;
 
+import com.skd.primitivemenagerie.core.PMItems;
 import com.skd.primitivemenagerie.core.PMLootTables;
+
+import javax.annotation.Nullable;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
@@ -26,14 +33,15 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 /**
  * Goblin, ported from {@code EntityGoblin}. A small hostile mob that roams villages and attacks
- * players, villagers and iron golems.
- *
- * <p>TODO(P6): the original equipped a {@code GOBLIN_MACE} on spawn; that item is not ported yet.</p>
+ * players, villagers and iron golems. It spawns holding a {@code GOBLIN_MACE}, matching the original
+ * {@code onInitialSpawn}.
  *
  * @author Daveyx0
  */
@@ -41,6 +49,13 @@ public class Goblin extends Monster implements IMultiMob {
 
     public Goblin(EntityType<? extends Monster> type, Level level) {
         super(type, level);
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason,
+            @Nullable SpawnGroupData spawnData) {
+        this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(PMItems.GOBLIN_MACE.get()));
+        return super.finalizeSpawn(level, difficulty, reason, spawnData);
     }
 
     public static AttributeSupplier.Builder createAttributes() {

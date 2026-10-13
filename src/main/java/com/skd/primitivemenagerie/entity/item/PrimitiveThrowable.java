@@ -33,6 +33,7 @@ public class PrimitiveThrowable extends ThrowableItemProjectile {
     private Supplier<EntityType<? extends Mob>> spawnEntityType = () -> EntityType.CHICKEN;
     private int spawnChance;
     private LivingEntity thrower;
+    private Item defaultItem = Items.EGG;
 
     public PrimitiveThrowable(EntityType<? extends PrimitiveThrowable> type, Level level) {
         super(type, level);
@@ -59,14 +60,19 @@ public class PrimitiveThrowable extends ThrowableItemProjectile {
         this.spawnChance = chance;
     }
 
+    /** Sets the item rendered by the projectile, so each thrown egg keeps its own texture. */
+    public void setDefaultItem(Item item) {
+        this.defaultItem = item;
+    }
+
     @Override
     protected Item getDefaultItem() {
-        return Items.EGG;
+        return this.defaultItem;
     }
 
     /** Kept for the flying-item renderer, mirroring {@code getItemFromEntity()}. */
     public ItemStack getItemFromEntity() {
-        return new ItemStack(Items.EGG);
+        return new ItemStack(this.defaultItem);
     }
 
     @Override
@@ -84,6 +90,13 @@ public class PrimitiveThrowable extends ThrowableItemProjectile {
                 Mob entity = this.spawnEntityType.get().create(this.level());
 
                 if (entity != null) {
+                    // The original spawned animals and creepers as babies (setGrowingAge(-24000)).
+                    if (entity instanceof net.minecraft.world.entity.AgeableMob ageable) {
+                        ageable.setBaby(true);
+                    } else if (entity instanceof com.skd.primitivemenagerie.entity.monster.PrimitiveCreeper creeper) {
+                        creeper.setGrowingAge(-24000);
+                    }
+
                     entity.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), 0.0F);
 
                     if (entity instanceof ITameableEntity tameable && !tameable.isTamed() && this.thrower != null) {

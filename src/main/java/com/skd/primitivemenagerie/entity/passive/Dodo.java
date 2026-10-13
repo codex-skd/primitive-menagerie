@@ -113,8 +113,6 @@ public class Dodo extends Chicken implements IMultiMobPassive {
 
         if (!this.level().isClientSide && !this.isBaby() && !this.isChickenJockey() && --this.timeUntilNextDodoEgg <= 0) {
             this.playSound(SoundEvents.CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
-            // TODO(P6): the original drops PrimitiveMobsItems.DODO_EGG, a throwing item that spawns a
-            // baby dodo. The P1 placeholder item is dropped meanwhile.
             this.spawnAtLocation(PMItems.DODO_EGG.get());
             this.timeUntilNextDodoEgg = this.random.nextInt(10000) + 10000;
         }

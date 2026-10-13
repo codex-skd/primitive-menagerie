@@ -59,6 +59,10 @@ public final class PMRegistries {
         ENTITIES.register(modEventBus);
         ITEMS.register(modEventBus);
         SOUNDS.register(modEventBus);
+        PMDataComponents.COMPONENTS.register(modEventBus);
+        PMItems.ARMOR_MATERIALS.register(modEventBus);
+        PMRecipes.SERIALIZERS.register(modEventBus);
+        PMFeatures.FEATURES.register(modEventBus);
         modEventBus.addListener(PMRegistries::onEntityAttributeCreation);
 
         // Register the villager professions of the mod and their trade listener.

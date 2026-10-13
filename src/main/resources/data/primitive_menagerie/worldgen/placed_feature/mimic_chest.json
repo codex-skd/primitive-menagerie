@@ -1,0 +1,15 @@
+{
+  "feature": "primitive_menagerie:mimic_chest",
+  "placement": [
+    { "type": "minecraft:in_square" },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": { "absolute": 5 },
+        "max_inclusive": { "absolute": 39 }
+      }
+    },
+    { "type": "minecraft:biome" }
+  ]
+}

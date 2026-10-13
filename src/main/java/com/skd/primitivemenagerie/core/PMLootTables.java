@@ -34,6 +34,12 @@ public final class PMLootTables {
     public static final ResourceLocation MIMIC_TREASURE = PMReference.id("chests/mimic_treasure");
     public static final ResourceLocation MIMIC_TRAP = PMReference.id("chests/mimic_trap");
 
+    // Markers used to recognise a generated (or orb-marked) mimic chest in 1.21, where the 1.12
+    // "Mimic" tile-entity flag no longer exists. Both tables are empty; the chest is intercepted
+    // before it opens.
+    public static final ResourceLocation MIMIC_UNOPENED = PMReference.id("chests/mimic_unopened");
+    public static final ResourceLocation MIMIC_GUARANTEED = PMReference.id("chests/mimic_guaranteed");
+
     // Special entity loot
     public static final ResourceLocation FILCHLIZARD_STEAL = PMReference.id("entities/special/filch_lizard_steal");
     public static final ResourceLocation FILCHLIZARD_SPAWN = PMReference.id("entities/special/filch_lizard_spawn");

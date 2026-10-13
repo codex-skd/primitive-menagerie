@@ -24,5 +24,21 @@
   "entity.primitive_menagerie.grovesprite": "Grove Sprite",
   "entity.primitive_menagerie.lost_miner": "Lost Miner",
   "entity.primitive_menagerie.sheepman": "Sheepman",
-  "entity.primitive_menagerie.traveling_merchant": "Traveling Merchant"
+  "entity.primitive_menagerie.traveling_merchant": "Traveling Merchant",
+  "item.primitive_menagerie.camouflage_dye": "Camouflage Dye",
+  "item.primitive_menagerie.dodo": "Raw Dodo",
+  "item.primitive_menagerie.cooked_dodo": "Cooked Dodo",
+  "item.primitive_menagerie.dodo_egg": "Dodo Egg",
+  "item.primitive_menagerie.mimic_orb": "Mimic Orb",
+  "item.primitive_menagerie.wonder_sap": "Wonder Sap",
+  "item.primitive_menagerie.spider_egg": "Spider Egg",
+  "item.primitive_menagerie.mysteryegg1": "Mystery Egg",
+  "item.primitive_menagerie.mysteryegg2": "Mystery Egg",
+  "item.primitive_menagerie.mysteryegg3": "Mystery Egg",
+  "item.primitive_menagerie.spider_eggshell": "Spider Egg Shell",
+  "item.primitive_menagerie.goblin_mace": "Goblin Mace",
+  "item.primitive_menagerie.camouflage_helmet": "Camouflage Helmet",
+  "item.primitive_menagerie.camouflage_chestplate": "Camouflage Chestplate",
+  "item.primitive_menagerie.camouflage_leggings": "Camouflage Leggings",
+  "item.primitive_menagerie.camouflage_boots": "Camouflage Boots"
 }

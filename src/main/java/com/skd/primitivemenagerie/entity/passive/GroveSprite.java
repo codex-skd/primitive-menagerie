@@ -68,9 +68,8 @@ import net.neoforged.neoforge.network.PacketDistributor;
  * the colors of a nearby tree, plants saplings and can turn into a fire-fed "cinder" variant.
  *
  * <p>Simplifications: the DynamicTrees integration of the original is not ported (the Mobweave Core
- * tree search is used); the sap color is sent through the ported network message but can only be
- * applied once the real wonder-sap item is ported in P6 ({@code TODO(P6)}); the render-time pivot
- * rotation of the leaf layer is done by the renderer.</p>
+ * tree search is used); the sap color and log type are stored on the held wonder-sap item through its
+ * data components; the render-time pivot rotation of the leaf layer is done by the renderer.</p>
  *
  * @author Daveyx0
  */
@@ -484,8 +483,13 @@ public class GroveSprite extends PathfinderMob implements IMultiMobPassive {
 
     public void setSapColor(int color) {
         this.sapColor = color;
-        // TODO(P6): apply the color to the real wonder-sap item held in the offhand once ItemGroveSpriteSap
-        // is ported. The P1 placeholder item has no color storage.
+
+        ItemStack sap = this.getOffhandItem();
+
+        if (sap.getItem() instanceof com.skd.primitivemenagerie.item.ItemGroveSpriteSap) {
+            com.skd.primitivemenagerie.item.ItemGroveSpriteSap.setColor(sap, color);
+            com.skd.primitivemenagerie.item.ItemGroveSpriteSap.setSapLogState(sap, this.getLog());
+        }
     }
 
     public int getSapColor() {

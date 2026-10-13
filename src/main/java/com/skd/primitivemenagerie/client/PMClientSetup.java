@@ -71,6 +71,9 @@ public final class PMClientSetup {
     public static void register(IEventBus modEventBus) {
         modEventBus.addListener(PMClientSetup::onRegisterLayerDefinitions);
         modEventBus.addListener(PMClientSetup::onRegisterRenderers);
+        modEventBus.addListener(PMItemColors::onRegisterItemColors);
+        PMCamouflageHandler.register();
+        PMClientEvents.register();
     }
 
     private static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {

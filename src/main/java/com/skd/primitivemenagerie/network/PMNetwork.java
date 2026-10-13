@@ -46,9 +46,27 @@ public final class PMNetwork {
     }
 
     private static void handlePrimitiveColor(PrimitiveColorPayload payload, Player player) {
-        // TODO(P6): apply payload.color() to the camouflage armor item in payload.slot() of the
-        // entity with payload.id(). The real item class (ItemCamouflageArmor) is ported in P6; the P1
-        // placeholder item has no color storage.
+        Entity entity = getEntity(payload.id(), player);
+
+        if (entity == null) {
+            entity = player;
+        }
+
+        int slotId = payload.slot();
+
+        if (slotId < 0 || slotId >= net.minecraft.world.entity.EquipmentSlot.values().length) {
+            return;
+        }
+
+        net.minecraft.world.entity.EquipmentSlot slot = net.minecraft.world.entity.EquipmentSlot.values()[slotId];
+
+        if (entity instanceof net.minecraft.world.entity.LivingEntity living) {
+            net.minecraft.world.item.ItemStack stack = living.getItemBySlot(slot);
+
+            if (stack.getItem() instanceof com.skd.primitivemenagerie.item.ItemCamouflageArmor) {
+                com.skd.primitivemenagerie.item.ItemCamouflageArmor.setColor(stack, payload.color());
+            }
+        }
     }
 
     private static void handlePrimitiveColorSap(PrimitiveColorSapPayload payload, Player player) {
