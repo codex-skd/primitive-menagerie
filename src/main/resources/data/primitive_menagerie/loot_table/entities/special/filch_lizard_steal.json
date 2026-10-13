@@ -1,0 +1,74 @@
+{
+    "pools": [
+        {
+            "name": "filch_lizard_001",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:gold_ingot"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_002",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:iron_ingot"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_003",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lapis_lazuli"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_004",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:diamond"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_005",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:emerald"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_006",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:ender_pearl"
+                }
+            ]
+        },
+        {
+            "name": "filch_lizard_007",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:flint"
+                }
+            ]
+        }
+    ]
+}

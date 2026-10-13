@@ -1,9 +1,13 @@
 package com.skd.primitivemenagerie;
 
 import com.mojang.logging.LogUtils;
+import com.skd.primitivemenagerie.config.PMConfig;
+import com.skd.primitivemenagerie.core.PMRegistries;
+
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import org.slf4j.Logger;
 
 @Mod(PrimitiveMenagerie.MODID)
@@ -12,6 +16,10 @@ public class PrimitiveMenagerie {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public PrimitiveMenagerie(IEventBus modEventBus, ModContainer modContainer) {
+        modContainer.registerConfig(ModConfig.Type.COMMON, PMConfig.SPEC);
+
+        PMRegistries.register(modEventBus);
+
         LOGGER.info("Primitive Menagerie loading");
     }
 }
