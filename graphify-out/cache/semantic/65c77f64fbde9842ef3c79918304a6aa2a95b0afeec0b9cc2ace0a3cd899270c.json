@@ -1,0 +1,1 @@
+{"nodes": [{"id": "3", "type": "image", "label": "Spider Eyes Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\spider_eyes.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

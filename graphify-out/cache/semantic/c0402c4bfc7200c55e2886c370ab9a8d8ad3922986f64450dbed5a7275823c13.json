@@ -1,0 +1,1 @@
+{"nodes": [{"id": "10", "type": "image", "label": "Festive Creeper Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\festivecreeper\\festivecreeper.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

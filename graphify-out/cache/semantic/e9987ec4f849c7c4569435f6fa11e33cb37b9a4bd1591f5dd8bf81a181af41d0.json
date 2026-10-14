@@ -1,0 +1,1 @@
+{"nodes": [{"id": "15", "type": "image", "label": "Grove Sprite Cinderleaf Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\grovesprite\\cinderleaf.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

@@ -1,0 +1,1137 @@
+{
+  "build.gradle": {
+    "mtime": 1791914601.4457622,
+    "ast_hash": "1c48830968232cd401f6e74a862c4e37",
+    "semantic_hash": "1c48830968232cd401f6e74a862c4e37"
+  },
+  "gradlew": {
+    "mtime": 1791914586.2230892,
+    "ast_hash": "794669d78aef1dd5c7d889ef618b311a",
+    "semantic_hash": "794669d78aef1dd5c7d889ef618b311a"
+  },
+  "settings.gradle": {
+    "mtime": 1791914586.9886336,
+    "ast_hash": "61a5f22974b63ff27ab2ad89d023c57c",
+    "semantic_hash": "61a5f22974b63ff27ab2ad89d023c57c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/PrimitiveMenagerie.java": {
+    "mtime": 1791930177.381075,
+    "ast_hash": "627bacf0d6f4de5e3afcd287140ee2db",
+    "semantic_hash": "627bacf0d6f4de5e3afcd287140ee2db"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/PMCamouflageHandler.java": {
+    "mtime": 1791930198.3465035,
+    "ast_hash": "6d3479549b5be4d8194cce7826a51a74",
+    "semantic_hash": "6d3479549b5be4d8194cce7826a51a74"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/PMClientEvents.java": {
+    "mtime": 1791930183.0983584,
+    "ast_hash": "dc6d35697cb7b98d306bcfbe257c29f5",
+    "semantic_hash": "dc6d35697cb7b98d306bcfbe257c29f5"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/PMClientSetup.java": {
+    "mtime": 1791930201.2208908,
+    "ast_hash": "57998a9532aca6a5e841eda348363533",
+    "semantic_hash": "57998a9532aca6a5e841eda348363533"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/PMItemColors.java": {
+    "mtime": 1791929573.3664057,
+    "ast_hash": "fc677ae12966809f5f29feaa0073a183",
+    "semantic_hash": "fc677ae12966809f5f29feaa0073a183"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelBlazingJuggernaut.java": {
+    "mtime": 1791925113.9090862,
+    "ast_hash": "0b1e13562e03255ceb8bdcee716a375f",
+    "semantic_hash": "0b1e13562e03255ceb8bdcee716a375f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelBrainSlime.java": {
+    "mtime": 1791923003.4447854,
+    "ast_hash": "ac5bc29b3e276e0d5a3dc247cb358130",
+    "semantic_hash": "ac5bc29b3e276e0d5a3dc247cb358130"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelChameleon.java": {
+    "mtime": 1791927583.7156682,
+    "ast_hash": "1a98d77aed5ca4ad190bf12842d2aa2e",
+    "semantic_hash": "1a98d77aed5ca4ad190bf12842d2aa2e"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelDodo.java": {
+    "mtime": 1791927583.7679296,
+    "ast_hash": "80fe5d1f5b818d3d599e15617ea3cf95",
+    "semantic_hash": "80fe5d1f5b818d3d599e15617ea3cf95"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelEmpty.java": {
+    "mtime": 1791923037.2232955,
+    "ast_hash": "c27c6a3d85665dbf6dacb98f445e422c",
+    "semantic_hash": "c27c6a3d85665dbf6dacb98f445e422c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelEnchantedBook.java": {
+    "mtime": 1791923022.912995,
+    "ast_hash": "bd0e7bc8bc143b69c446681e6b17174f",
+    "semantic_hash": "bd0e7bc8bc143b69c446681e6b17174f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelFilchLizard.java": {
+    "mtime": 1791927721.8791716,
+    "ast_hash": "74019bae49b357455b361b72add9cc6b",
+    "semantic_hash": "74019bae49b357455b361b72add9cc6b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelFlameSpewer.java": {
+    "mtime": 1791925165.4744458,
+    "ast_hash": "9dee115cf3a4ddb92c96f604158ded35",
+    "semantic_hash": "9dee115cf3a4ddb92c96f604158ded35"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelGoblin.java": {
+    "mtime": 1791920321.136945,
+    "ast_hash": "e2bd417e57c6f5c9f927aaae9a822233",
+    "semantic_hash": "e2bd417e57c6f5c9f927aaae9a822233"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelGroveSprite.java": {
+    "mtime": 1791927718.5659552,
+    "ast_hash": "c8b6efa851559bc1449ef5afaecd4e83",
+    "semantic_hash": "c8b6efa851559bc1449ef5afaecd4e83"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelHarpy.java": {
+    "mtime": 1791920310.896269,
+    "ast_hash": "e7785fecdc91d96cd2c3f787728e18a9",
+    "semantic_hash": "e7785fecdc91d96cd2c3f787728e18a9"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelLilyLurker.java": {
+    "mtime": 1791925081.7893972,
+    "ast_hash": "b1fa8acb784debb12105bf033870886a",
+    "semantic_hash": "b1fa8acb784debb12105bf033870886a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelLostMiner.java": {
+    "mtime": 1791927725.003249,
+    "ast_hash": "00b140c8e43f6af96622ad0c7780ee51",
+    "semantic_hash": "00b140c8e43f6af96622ad0c7780ee51"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelMimic.java": {
+    "mtime": 1791925096.1102767,
+    "ast_hash": "ea5a6fe0f1ff18cd8e7250140ed8135c",
+    "semantic_hash": "ea5a6fe0f1ff18cd8e7250140ed8135c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelPrimitiveCreeper.java": {
+    "mtime": 1791920301.5300703,
+    "ast_hash": "66852e54f32264ed2eafa78fa15e3f12",
+    "semantic_hash": "66852e54f32264ed2eafa78fa15e3f12"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelSheepman.java": {
+    "mtime": 1791927634.2359264,
+    "ast_hash": "7fa956866b49ce14d8730b36477e2167",
+    "semantic_hash": "7fa956866b49ce14d8730b36477e2167"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelTravelingMerchant.java": {
+    "mtime": 1791927583.8881185,
+    "ast_hash": "09665183186577255640f409e29274eb",
+    "semantic_hash": "09665183186577255640f409e29274eb"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelTreasureSlime.java": {
+    "mtime": 1791923014.2301254,
+    "ast_hash": "df79eb4dd5c47086b40887dc7144dbe6",
+    "semantic_hash": "df79eb4dd5c47086b40887dc7144dbe6"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelTrollager.java": {
+    "mtime": 1791925254.069677,
+    "ast_hash": "3ab9f4c0de91fb7d7f0be9f0c540f6d7",
+    "semantic_hash": "3ab9f4c0de91fb7d7f0be9f0c540f6d7"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelVoidEye.java": {
+    "mtime": 1791925068.678206,
+    "ast_hash": "8a43c7a02aeaaf955828ffa39c285b07",
+    "semantic_hash": "8a43c7a02aeaaf955828ffa39c285b07"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/ModelYeti.java": {
+    "mtime": 1791925029.5100617,
+    "ast_hash": "7cd7d439448a81872d91526a20122349",
+    "semantic_hash": "7cd7d439448a81872d91526a20122349"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/models/PMModelLayers.java": {
+    "mtime": 1791925172.1902592,
+    "ast_hash": "70b91f184c2384198fc2ef4c80ac4940",
+    "semantic_hash": "70b91f184c2384198fc2ef4c80ac4940"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/PMTint.java": {
+    "mtime": 1791927680.5999463,
+    "ast_hash": "aac9465aa0e7a0c258cfe80aed5c28f6",
+    "semantic_hash": "aac9465aa0e7a0c258cfe80aed5c28f6"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderBabySpider.java": {
+    "mtime": 1791920344.3566406,
+    "ast_hash": "14aa9a4e4ad64534924941dfe26fe9f7",
+    "semantic_hash": "14aa9a4e4ad64534924941dfe26fe9f7"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderBlazingJuggernaut.java": {
+    "mtime": 1791925220.236186,
+    "ast_hash": "7f50e6860194e1bc417e9a31156a932e",
+    "semantic_hash": "7f50e6860194e1bc417e9a31156a932e"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderBrainSlime.java": {
+    "mtime": 1791922826.8315773,
+    "ast_hash": "16678a4d9f0de4f9bffecccc173a667b",
+    "semantic_hash": "16678a4d9f0de4f9bffecccc173a667b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderChameleon.java": {
+    "mtime": 1791927700.4435065,
+    "ast_hash": "9f05c6b4aea2a573fcb926b5b7f4b58c",
+    "semantic_hash": "9f05c6b4aea2a573fcb926b5b7f4b58c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderDodo.java": {
+    "mtime": 1791927705.0483835,
+    "ast_hash": "96133f92e217b87501b3d0832e6250ad",
+    "semantic_hash": "96133f92e217b87501b3d0832e6250ad"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderEnchantedBook.java": {
+    "mtime": 1791922890.910177,
+    "ast_hash": "9db0800d547847b7c767d453d7ec988d",
+    "semantic_hash": "9db0800d547847b7c767d453d7ec988d"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderFilchLizard.java": {
+    "mtime": 1791927746.357309,
+    "ast_hash": "6262b663edc09edef524cf6d3e9a7fba",
+    "semantic_hash": "6262b663edc09edef524cf6d3e9a7fba"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderFlameSpewer.java": {
+    "mtime": 1791925272.8864596,
+    "ast_hash": "834f049035f74bf2806aa1639a256366",
+    "semantic_hash": "834f049035f74bf2806aa1639a256366"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderFlyingItem.java": {
+    "mtime": 1791922896.7467327,
+    "ast_hash": "67c211eb253c7fb5bcf6e6a84c59f7a9",
+    "semantic_hash": "67c211eb253c7fb5bcf6e6a84c59f7a9"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderGoblin.java": {
+    "mtime": 1791920391.571118,
+    "ast_hash": "d5f5819ed6301cc86f85a7a5075e8c97",
+    "semantic_hash": "d5f5819ed6301cc86f85a7a5075e8c97"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderGroveSprite.java": {
+    "mtime": 1791927753.1405277,
+    "ast_hash": "a61eb2ac405132c622847a6df48a71a7",
+    "semantic_hash": "a61eb2ac405132c622847a6df48a71a7"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderHarpy.java": {
+    "mtime": 1791920399.4172416,
+    "ast_hash": "0232c23e01043c113ce124a486c5779b",
+    "semantic_hash": "0232c23e01043c113ce124a486c5779b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderHauntedTool.java": {
+    "mtime": 1791922881.8655188,
+    "ast_hash": "87ec8fa15d9e68320bc4a9b694582808",
+    "semantic_hash": "87ec8fa15d9e68320bc4a9b694582808"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderLilyLurker.java": {
+    "mtime": 1791925237.2872467,
+    "ast_hash": "8a9c842d4e35186456b37559acd71287",
+    "semantic_hash": "8a9c842d4e35186456b37559acd71287"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderLostMiner.java": {
+    "mtime": 1791927760.3940802,
+    "ast_hash": "eb84c3a73e887bc21a7de83f8c939ae7",
+    "semantic_hash": "eb84c3a73e887bc21a7de83f8c939ae7"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderMimic.java": {
+    "mtime": 1791925342.2312927,
+    "ast_hash": "de7c95fdf286b2512340a3763c566ae8",
+    "semantic_hash": "de7c95fdf286b2512340a3763c566ae8"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderMotherSpider.java": {
+    "mtime": 1791920360.5019376,
+    "ast_hash": "2f017840d00b5674eaffc6a143ef4a58",
+    "semantic_hash": "2f017840d00b5674eaffc6a143ef4a58"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderPrimitiveCreeper.java": {
+    "mtime": 1791920332.0165937,
+    "ast_hash": "04857d76a57b7ece5d2ee6782e5e493d",
+    "semantic_hash": "04857d76a57b7ece5d2ee6782e5e493d"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderPrimitiveTNTPrimed.java": {
+    "mtime": 1791922917.779319,
+    "ast_hash": "d5fa1fdbbb6b5e13b33c59f3e91b39fb",
+    "semantic_hash": "d5fa1fdbbb6b5e13b33c59f3e91b39fb"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderSheepman.java": {
+    "mtime": 1791927773.9779003,
+    "ast_hash": "f2374e4fff693a658dbb5ab342bcf430",
+    "semantic_hash": "f2374e4fff693a658dbb5ab342bcf430"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderSkeletonWarrior.java": {
+    "mtime": 1791922961.3788323,
+    "ast_hash": "ff61300c76a097c04708b9818fab9adc",
+    "semantic_hash": "ff61300c76a097c04708b9818fab9adc"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderThrownBlock.java": {
+    "mtime": 1791922904.7794294,
+    "ast_hash": "238528c0eb26c2edaed0aa0ff90a6d60",
+    "semantic_hash": "238528c0eb26c2edaed0aa0ff90a6d60"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderTravelingMerchant.java": {
+    "mtime": 1791927765.0105703,
+    "ast_hash": "a636911bc298c6d2e09aef3c1a5e8869",
+    "semantic_hash": "a636911bc298c6d2e09aef3c1a5e8869"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderTreasureSlime.java": {
+    "mtime": 1791922841.6673222,
+    "ast_hash": "75b41102537507bb768edf697b77f525",
+    "semantic_hash": "75b41102537507bb768edf697b77f525"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderTrollager.java": {
+    "mtime": 1791925261.307898,
+    "ast_hash": "fd9c25bde2615bde284fd3eab4d7f1cc",
+    "semantic_hash": "fd9c25bde2615bde284fd3eab4d7f1cc"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderVoidEye.java": {
+    "mtime": 1791926458.338099,
+    "ast_hash": "6accd602215bad2fd2401860bfc64951",
+    "semantic_hash": "6accd602215bad2fd2401860bfc64951"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/RenderYeti.java": {
+    "mtime": 1791925228.7090156,
+    "ast_hash": "0dda4df811912d2ac5a8a9e40dc4e67a",
+    "semantic_hash": "0dda4df811912d2ac5a8a9e40dc4e67a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerBabySpiderEyes.java": {
+    "mtime": 1791920352.1080964,
+    "ast_hash": "b6c4d18b251520368eafb5384920e588",
+    "semantic_hash": "b6c4d18b251520368eafb5384920e588"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerBrainSlimeGel.java": {
+    "mtime": 1791922834.5080507,
+    "ast_hash": "8beab021ed7315ea2e0f90659442f402",
+    "semantic_hash": "8beab021ed7315ea2e0f90659442f402"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerFlameSpewerEyes.java": {
+    "mtime": 1791925290.801242,
+    "ast_hash": "09628d9b320b6e9eee13dffa42dbd152",
+    "semantic_hash": "09628d9b320b6e9eee13dffa42dbd152"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerGroveSpriteLeaves.java": {
+    "mtime": 1791927783.2230957,
+    "ast_hash": "c69d9a1f17c94d7be0811646717cf660",
+    "semantic_hash": "c69d9a1f17c94d7be0811646717cf660"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerGroveSpriteStump.java": {
+    "mtime": 1791927788.9911764,
+    "ast_hash": "5515087cda68678e5acd7617e1184fcc",
+    "semantic_hash": "5515087cda68678e5acd7617e1184fcc"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerHeldItemCustom.java": {
+    "mtime": 1791927741.5883331,
+    "ast_hash": "b79d6943e9bad130cd167e8e21546024",
+    "semantic_hash": "b79d6943e9bad130cd167e8e21546024"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerHeldItemHaunted.java": {
+    "mtime": 1791922864.7533557,
+    "ast_hash": "d7b4b635940968bea1f95972c5c776ae",
+    "semantic_hash": "d7b4b635940968bea1f95972c5c776ae"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerHeldItemSlime.java": {
+    "mtime": 1791922855.5678687,
+    "ast_hash": "662054e44a7889313c4f6a2030213251",
+    "semantic_hash": "662054e44a7889313c4f6a2030213251"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerLavaSkin.java": {
+    "mtime": 1791925281.015721,
+    "ast_hash": "f0e61ec7ca8ff5c86e22e4f91703a125",
+    "semantic_hash": "f0e61ec7ca8ff5c86e22e4f91703a125"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerMimicMouth.java": {
+    "mtime": 1791925336.3157074,
+    "ast_hash": "17884b05016bc05b80d02f9dbb1ca37d",
+    "semantic_hash": "17884b05016bc05b80d02f9dbb1ca37d"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerPrimitiveCreeperCharge.java": {
+    "mtime": 1791920337.8866198,
+    "ast_hash": "87ce68fb7086fde9b05d4478f1b73344",
+    "semantic_hash": "87ce68fb7086fde9b05d4478f1b73344"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerPrimitiveSpiderEyes.java": {
+    "mtime": 1791920378.0755675,
+    "ast_hash": "ca03224ecd09d800c5021972c3e31516",
+    "semantic_hash": "ca03224ecd09d800c5021972c3e31516"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerSheepmanWool.java": {
+    "mtime": 1791927795.5385115,
+    "ast_hash": "b27a8e4ec82ed47ce2976a7107461a0f",
+    "semantic_hash": "b27a8e4ec82ed47ce2976a7107461a0f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerTreasureSlimeGel.java": {
+    "mtime": 1791922848.1665492,
+    "ast_hash": "bee8b04224f0b4bc99f27b28a142b1bd",
+    "semantic_hash": "bee8b04224f0b4bc99f27b28a142b1bd"
+  },
+  "src/main/java/com/skd/primitivemenagerie/client/renderer/layer/LayerVoidEyeSeen.java": {
+    "mtime": 1791925352.1043718,
+    "ast_hash": "94b8f412b94e7b24c4c3a7ced6ab93f7",
+    "semantic_hash": "94b8f412b94e7b24c4c3a7ced6ab93f7"
+  },
+  "src/main/java/com/skd/primitivemenagerie/config/PMConfig.java": {
+    "mtime": 1791915077.0634205,
+    "ast_hash": "d8ffef7ca0d2bf3a153e81a3e836c548",
+    "semantic_hash": "d8ffef7ca0d2bf3a153e81a3e836c548"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMDataComponents.java": {
+    "mtime": 1791929408.1796205,
+    "ast_hash": "09346d732f2cfbe5dba6d7f8d866993a",
+    "semantic_hash": "09346d732f2cfbe5dba6d7f8d866993a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMEntities.java": {
+    "mtime": 1791927515.3297079,
+    "ast_hash": "a8b5a34a461aac7da7f3827a2bfd592c",
+    "semantic_hash": "a8b5a34a461aac7da7f3827a2bfd592c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMEvents.java": {
+    "mtime": 1791930130.3213038,
+    "ast_hash": "a8856fa38adc0d3672fcd71dcef97690",
+    "semantic_hash": "a8856fa38adc0d3672fcd71dcef97690"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMFeatures.java": {
+    "mtime": 1791929993.9473124,
+    "ast_hash": "e6c60a94f3fa3e1c781cd0294ca0d7f3",
+    "semantic_hash": "e6c60a94f3fa3e1c781cd0294ca0d7f3"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMItems.java": {
+    "mtime": 1791929493.8686357,
+    "ast_hash": "cbe515828879225c543f616a95685d90",
+    "semantic_hash": "cbe515828879225c543f616a95685d90"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMLootTables.java": {
+    "mtime": 1791929959.1200552,
+    "ast_hash": "4faf9370b28ce244732656dad25ef103",
+    "semantic_hash": "4faf9370b28ce244732656dad25ef103"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMRecipes.java": {
+    "mtime": 1791929654.3547003,
+    "ast_hash": "2497afc74a0f765fb7854fa5b66bf029",
+    "semantic_hash": "2497afc74a0f765fb7854fa5b66bf029"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMReference.java": {
+    "mtime": 1791915024.3720474,
+    "ast_hash": "d63c54b4879ede924584fc965c2d0e8b",
+    "semantic_hash": "d63c54b4879ede924584fc965c2d0e8b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMRegistries.java": {
+    "mtime": 1791930001.527927,
+    "ast_hash": "f4215ff6f1057f7a8a6b0217c7056851",
+    "semantic_hash": "f4215ff6f1057f7a8a6b0217c7056851"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMSoundEvents.java": {
+    "mtime": 1791915045.9098516,
+    "ast_hash": "e79798f27dbd0ea004f5eb8197d5f7dc",
+    "semantic_hash": "e79798f27dbd0ea004f5eb8197d5f7dc"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMSpawnRegistry.java": {
+    "mtime": 1791929806.129775,
+    "ast_hash": "81277976919e8c3079d706f68e7f29ca",
+    "semantic_hash": "81277976919e8c3079d706f68e7f29ca"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMTameableEntries.java": {
+    "mtime": 1791929819.4370654,
+    "ast_hash": "ecada671a998e5785670dab667aea8f8",
+    "semantic_hash": "ecada671a998e5785670dab667aea8f8"
+  },
+  "src/main/java/com/skd/primitivemenagerie/core/PMVillagerProfessions.java": {
+    "mtime": 1791927408.0801806,
+    "ast_hash": "e4175ef87c14fc2d010cfd8ceee09be9",
+    "semantic_hash": "e4175ef87c14fc2d010cfd8ceee09be9"
+  },
+  "src/main/java/com/skd/primitivemenagerie/crafting/CamouflageToggleRecipe.java": {
+    "mtime": 1791929661.0417218,
+    "ast_hash": "8da9b6ce693bc878b843008797398ff0",
+    "semantic_hash": "8da9b6ce693bc878b843008797398ff0"
+  },
+  "src/main/java/com/skd/primitivemenagerie/crafting/WonderSapRecipe.java": {
+    "mtime": 1791929666.3361404,
+    "ast_hash": "e2399616d8ce5545b2ed965ca405cc8c",
+    "semantic_hash": "e2399616d8ce5545b2ed965ca405cc8c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/IAnimatedMob.java": {
+    "mtime": 1791924724.1131983,
+    "ast_hash": "87657e399a904415577757d839fd3f0f",
+    "semantic_hash": "87657e399a904415577757d839fd3f0f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/ai/EntityAISwitchBetweenRangedAndMelee.java": {
+    "mtime": 1791920067.5520675,
+    "ast_hash": "7fa96d7ddf9f4118a9c4b074ec2b0ff0",
+    "semantic_hash": "7fa96d7ddf9f4118a9c4b074ec2b0ff0"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/ai/GroveSpriteTemptGoal.java": {
+    "mtime": 1791927351.6874287,
+    "ast_hash": "cb4bd703239eb0e149d68a92942b4e8b",
+    "semantic_hash": "cb4bd703239eb0e149d68a92942b4e8b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/ai/TrollagerAttacksGoal.java": {
+    "mtime": 1791924961.2732472,
+    "ast_hash": "ae6ca5848e6fc46cbd91d1e4488a8e32",
+    "semantic_hash": "ae6ca5848e6fc46cbd91d1e4488a8e32"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/item/FlameSpit.java": {
+    "mtime": 1791922668.5416493,
+    "ast_hash": "8cad7ac380661c8b877a8afd0abe5d14",
+    "semantic_hash": "8cad7ac380661c8b877a8afd0abe5d14"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/item/PrimitiveTNTPrimed.java": {
+    "mtime": 1791922679.0022163,
+    "ast_hash": "4dc5abc9699f46a105bf2fb9750ee20a",
+    "semantic_hash": "4dc5abc9699f46a105bf2fb9750ee20a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/item/PrimitiveThrowable.java": {
+    "mtime": 1791931273.533588,
+    "ast_hash": "86b9cab6feb337c88cd89c6fe1cdd640",
+    "semantic_hash": "86b9cab6feb337c88cd89c6fe1cdd640"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/item/SpiderEgg.java": {
+    "mtime": 1791929354.0886707,
+    "ast_hash": "9cad8d882722361df857d570b8f876af",
+    "semantic_hash": "9cad8d882722361df857d570b8f876af"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/item/ThrownBlock.java": {
+    "mtime": 1791922717.3957107,
+    "ast_hash": "19719b259a0659490ae59dded3976c1f",
+    "semantic_hash": "19719b259a0659490ae59dded3976c1f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/BabySpider.java": {
+    "mtime": 1791920225.74982,
+    "ast_hash": "74d93bf381220ccacf14b326e7a2a5c2",
+    "semantic_hash": "74d93bf381220ccacf14b326e7a2a5c2"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/BlazingJuggernaut.java": {
+    "mtime": 1791924873.005346,
+    "ast_hash": "53c80256d59bdf625bfc784b3cba0278",
+    "semantic_hash": "53c80256d59bdf625bfc784b3cba0278"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/BrainSlime.java": {
+    "mtime": 1791922457.1882012,
+    "ast_hash": "1aec0aa597e53ac178a3f2d3019186dd",
+    "semantic_hash": "1aec0aa597e53ac178a3f2d3019186dd"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/EnchantedBook.java": {
+    "mtime": 1791922605.7839305,
+    "ast_hash": "1b782ef0f97dc068407c0dd48a176951",
+    "semantic_hash": "1b782ef0f97dc068407c0dd48a176951"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/FestiveCreeper.java": {
+    "mtime": 1791922708.178026,
+    "ast_hash": "9fbbd0b0dd300c63237fecc13a55da2e",
+    "semantic_hash": "9fbbd0b0dd300c63237fecc13a55da2e"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/FlameSpewer.java": {
+    "mtime": 1791924900.3375409,
+    "ast_hash": "3fd2cbc8a3d477e78fa762bbc2824498",
+    "semantic_hash": "3fd2cbc8a3d477e78fa762bbc2824498"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/Goblin.java": {
+    "mtime": 1791931205.6436965,
+    "ast_hash": "c77ae6e68745736a4d7ba2e8c96b380a",
+    "semantic_hash": "c77ae6e68745736a4d7ba2e8c96b380a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/Harpy.java": {
+    "mtime": 1791920206.7678566,
+    "ast_hash": "74197f6132a819a21aa4a48d70068b3b",
+    "semantic_hash": "74197f6132a819a21aa4a48d70068b3b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/HauntedTool.java": {
+    "mtime": 1791922597.826007,
+    "ast_hash": "f5189c4c5053c21fb23659f48bca3541",
+    "semantic_hash": "f5189c4c5053c21fb23659f48bca3541"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/LilyLurker.java": {
+    "mtime": 1791924928.2235336,
+    "ast_hash": "abcc9f45abb7d347a59dbfa276632e7f",
+    "semantic_hash": "abcc9f45abb7d347a59dbfa276632e7f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/Mimic.java": {
+    "mtime": 1791924607.0632255,
+    "ast_hash": "1e0541c07b15df2f519fa58e713b6437",
+    "semantic_hash": "1e0541c07b15df2f519fa58e713b6437"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/MotherSpider.java": {
+    "mtime": 1791920206.6299286,
+    "ast_hash": "d83780d53b859f34b6deb5a7ed8e67cd",
+    "semantic_hash": "d83780d53b859f34b6deb5a7ed8e67cd"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/PrimitiveCreeper.java": {
+    "mtime": 1791920200.0823023,
+    "ast_hash": "75787ca5bdfa25b2013ebd48c2041f59",
+    "semantic_hash": "75787ca5bdfa25b2013ebd48c2041f59"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/PrimitiveSpider.java": {
+    "mtime": 1791922192.5229566,
+    "ast_hash": "b7945831f73c6126003cfa3cd8324765",
+    "semantic_hash": "b7945831f73c6126003cfa3cd8324765"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/PrimitiveTameableMob.java": {
+    "mtime": 1791922111.1117756,
+    "ast_hash": "4158b92a6f0719d0ad4d3948819854fd",
+    "semantic_hash": "4158b92a6f0719d0ad4d3948819854fd"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/RocketCreeper.java": {
+    "mtime": 1791920211.2172816,
+    "ast_hash": "963c45fac884b1d7d34eef2771c4c34d",
+    "semantic_hash": "963c45fac884b1d7d34eef2771c4c34d"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/SkeletonWarrior.java": {
+    "mtime": 1791920080.6203046,
+    "ast_hash": "413269efbd3468f0fda73b0ed9cc9613",
+    "semantic_hash": "413269efbd3468f0fda73b0ed9cc9613"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/SupportCreeper.java": {
+    "mtime": 1791925443.5293567,
+    "ast_hash": "b19bc5c898171bc6341a7682678adfde",
+    "semantic_hash": "b19bc5c898171bc6341a7682678adfde"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/TameableSlime.java": {
+    "mtime": 1791922158.3460574,
+    "ast_hash": "189dcfa350c1ee7ad24ed15dda27d664",
+    "semantic_hash": "189dcfa350c1ee7ad24ed15dda27d664"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/TreasureSlime.java": {
+    "mtime": 1791922334.0002894,
+    "ast_hash": "f7d897628c48545a9201d7de0ceed970",
+    "semantic_hash": "f7d897628c48545a9201d7de0ceed970"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/Trollager.java": {
+    "mtime": 1791924949.7906432,
+    "ast_hash": "42e4ebcafab001faf473106fd4cd5051",
+    "semantic_hash": "42e4ebcafab001faf473106fd4cd5051"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/VoidEye.java": {
+    "mtime": 1791924917.8963246,
+    "ast_hash": "030de7192ac0ee8fd419dbd99abdf975",
+    "semantic_hash": "030de7192ac0ee8fd419dbd99abdf975"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/monster/Yeti.java": {
+    "mtime": 1791924956.0781448,
+    "ast_hash": "51f8a1d6c4a966998fa42811daacc0c1",
+    "semantic_hash": "51f8a1d6c4a966998fa42811daacc0c1"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/Chameleon.java": {
+    "mtime": 1791927547.1186135,
+    "ast_hash": "a6f431c0628244ba75b154495c60b13c",
+    "semantic_hash": "a6f431c0628244ba75b154495c60b13c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/Dodo.java": {
+    "mtime": 1791931278.0064025,
+    "ast_hash": "e3fcc2dcdaa92985ba634ca00297fae6",
+    "semantic_hash": "e3fcc2dcdaa92985ba634ca00297fae6"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/FilchLizard.java": {
+    "mtime": 1791927294.5170965,
+    "ast_hash": "07f376ca4cf22f826ff18a59c444fc55",
+    "semantic_hash": "07f376ca4cf22f826ff18a59c444fc55"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/GroveSprite.java": {
+    "mtime": 1791931297.0159173,
+    "ast_hash": "61e87d9afe598214e0485d48706f3864",
+    "semantic_hash": "61e87d9afe598214e0485d48706f3864"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/LostMiner.java": {
+    "mtime": 1791927830.5653358,
+    "ast_hash": "8c83828a20636ec9d2e9952b573097e2",
+    "semantic_hash": "8c83828a20636ec9d2e9952b573097e2"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/Sheepman.java": {
+    "mtime": 1791927833.75179,
+    "ast_hash": "c37372f609d17edc9a06d69adcb934db",
+    "semantic_hash": "c37372f609d17edc9a06d69adcb934db"
+  },
+  "src/main/java/com/skd/primitivemenagerie/entity/passive/TravelingMerchant.java": {
+    "mtime": 1791927836.9870763,
+    "ast_hash": "865cd2ae0608378f25325bd07552d876",
+    "semantic_hash": "865cd2ae0608378f25325bd07552d876"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemCamouflageArmor.java": {
+    "mtime": 1791929556.09516,
+    "ast_hash": "625eababc182d727f9d24e0870132e4a",
+    "semantic_hash": "625eababc182d727f9d24e0870132e4a"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemCamouflageDye.java": {
+    "mtime": 1791929432.2519267,
+    "ast_hash": "873790169f2b84edf24f5b43c6a398df",
+    "semantic_hash": "873790169f2b84edf24f5b43c6a398df"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemGoblinMace.java": {
+    "mtime": 1791929362.1152742,
+    "ast_hash": "2598883586dbbeed457b9b46106f5c7f",
+    "semantic_hash": "2598883586dbbeed457b9b46106f5c7f"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemGroveSpriteSap.java": {
+    "mtime": 1791929386.8790436,
+    "ast_hash": "cf40cb551535192e9bed4c738bfdac84",
+    "semantic_hash": "cf40cb551535192e9bed4c738bfdac84"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemMimicOrb.java": {
+    "mtime": 1791929436.6152496,
+    "ast_hash": "60220902c3346b0352cc145305f241bf",
+    "semantic_hash": "60220902c3346b0352cc145305f241bf"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemPrimitive.java": {
+    "mtime": 1791929313.7567887,
+    "ast_hash": "156ddfbd5fcf08f06ac613a1bec3ad24",
+    "semantic_hash": "156ddfbd5fcf08f06ac613a1bec3ad24"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemPrimitiveEgg.java": {
+    "mtime": 1791929455.3068278,
+    "ast_hash": "57618c3188cfc9914652a35b0f4cde5b",
+    "semantic_hash": "57618c3188cfc9914652a35b0f4cde5b"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemPrimitiveFood.java": {
+    "mtime": 1791929317.9988015,
+    "ast_hash": "8d71b2c2602d594b78d77e1cd93d766c",
+    "semantic_hash": "8d71b2c2602d594b78d77e1cd93d766c"
+  },
+  "src/main/java/com/skd/primitivemenagerie/item/ItemSpiderEggshell.java": {
+    "mtime": 1791929450.14422,
+    "ast_hash": "a7e62add93b8b9d2c4d4c7539f1e1485",
+    "semantic_hash": "a7e62add93b8b9d2c4d4c7539f1e1485"
+  },
+  "src/main/java/com/skd/primitivemenagerie/network/PMNetwork.java": {
+    "mtime": 1791929599.936782,
+    "ast_hash": "4dfc54260d79450da66c9f8f60436054",
+    "semantic_hash": "4dfc54260d79450da66c9f8f60436054"
+  },
+  "src/main/java/com/skd/primitivemenagerie/network/PrimitiveColorPayload.java": {
+    "mtime": 1791927173.9182322,
+    "ast_hash": "dcfdde1de4609770ee12335405b5c3e1",
+    "semantic_hash": "dcfdde1de4609770ee12335405b5c3e1"
+  },
+  "src/main/java/com/skd/primitivemenagerie/network/PrimitiveColorSapPayload.java": {
+    "mtime": 1791927175.5633104,
+    "ast_hash": "befdc0d82135f3228a7d510f7b9ca2ad",
+    "semantic_hash": "befdc0d82135f3228a7d510f7b9ca2ad"
+  },
+  "src/main/java/com/skd/primitivemenagerie/network/PrimitiveJumpingPayload.java": {
+    "mtime": 1791927177.2027686,
+    "ast_hash": "1d6019c5f83fae17afcd274560bcf5a0",
+    "semantic_hash": "1d6019c5f83fae17afcd274560bcf5a0"
+  },
+  "src/main/java/com/skd/primitivemenagerie/network/TeleportEyePayload.java": {
+    "mtime": 1791927179.5651631,
+    "ast_hash": "10255b74a7bc8cfdd41f5a063e74a308",
+    "semantic_hash": "10255b74a7bc8cfdd41f5a063e74a308"
+  },
+  "src/main/java/com/skd/primitivemenagerie/world/gen/MimicChestFeature.java": {
+    "mtime": 1791929989.183983,
+    "ast_hash": "f337f605430c8eb236c72efd9f2b28a2",
+    "semantic_hash": "f337f605430c8eb236c72efd9f2b28a2"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/en_us.json": {
+    "mtime": 1791929539.4349327,
+    "ast_hash": "802695a0059aa5b35a6c8c63eaa66a27",
+    "semantic_hash": "802695a0059aa5b35a6c8c63eaa66a27"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/es_mx.json": {
+    "mtime": 1791932216.844255,
+    "ast_hash": "5b3563b37aca36b0ce4dd0dc8b01f258",
+    "semantic_hash": "5b3563b37aca36b0ce4dd0dc8b01f258"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/ja_jp.json": {
+    "mtime": 1791932216.8530982,
+    "ast_hash": "3fee3d55a0461de0df2387601e5f537f",
+    "semantic_hash": "3fee3d55a0461de0df2387601e5f537f"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/ru_ru.json": {
+    "mtime": 1791932216.8555164,
+    "ast_hash": "f29746bfb821059976f5a467919ce7ac",
+    "semantic_hash": "f29746bfb821059976f5a467919ce7ac"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/tr_tr.json": {
+    "mtime": 1791932216.857309,
+    "ast_hash": "17761b1768aa88af7133f2f021d49ab8",
+    "semantic_hash": "17761b1768aa88af7133f2f021d49ab8"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/zh_cn.json": {
+    "mtime": 1791932216.859435,
+    "ast_hash": "7201d33b6da952874baa0f62246de764",
+    "semantic_hash": "7201d33b6da952874baa0f62246de764"
+  },
+  "src/main/resources/assets/primitive_menagerie/lang/zh_tw.json": {
+    "mtime": 1791932216.8608372,
+    "ast_hash": "281d5c8ad9bdf31785d045ed18af7036",
+    "semantic_hash": "281d5c8ad9bdf31785d045ed18af7036"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/camouflage_boots.json": {
+    "mtime": 1791929533.8145826,
+    "ast_hash": "5ebcb15e28ee28435c1ccaf427d60c6d",
+    "semantic_hash": "5ebcb15e28ee28435c1ccaf427d60c6d"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/camouflage_chestplate.json": {
+    "mtime": 1791929533.8155766,
+    "ast_hash": "6ef35ce66d159bf1a07cc2bbbc152888",
+    "semantic_hash": "6ef35ce66d159bf1a07cc2bbbc152888"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/camouflage_dye.json": {
+    "mtime": 1791929533.8036847,
+    "ast_hash": "aa2cbe46ce123ea842e0b502becc58f7",
+    "semantic_hash": "aa2cbe46ce123ea842e0b502becc58f7"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/camouflage_helmet.json": {
+    "mtime": 1791929533.8160722,
+    "ast_hash": "ab7322c3a3a389a91123b7fab3b79630",
+    "semantic_hash": "ab7322c3a3a389a91123b7fab3b79630"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/camouflage_leggings.json": {
+    "mtime": 1791929533.8200836,
+    "ast_hash": "7711c734ac81064d746532bdad1f4731",
+    "semantic_hash": "7711c734ac81064d746532bdad1f4731"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/cooked_dodo.json": {
+    "mtime": 1791929533.8042092,
+    "ast_hash": "57d545dad72d46794b2acec54a4d494b",
+    "semantic_hash": "57d545dad72d46794b2acec54a4d494b"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/dodo.json": {
+    "mtime": 1791929533.8049762,
+    "ast_hash": "a720ba277800f37e198d2603f361f3ad",
+    "semantic_hash": "a720ba277800f37e198d2603f361f3ad"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/dodo_egg.json": {
+    "mtime": 1791929533.8054724,
+    "ast_hash": "647811a42a882d8af549d1f943ac197c",
+    "semantic_hash": "647811a42a882d8af549d1f943ac197c"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/goblin_mace.json": {
+    "mtime": 1791929533.8140857,
+    "ast_hash": "d42813cab73c0324eb481f335b923f35",
+    "semantic_hash": "d42813cab73c0324eb481f335b923f35"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/mimic_orb.json": {
+    "mtime": 1791929533.8069732,
+    "ast_hash": "b860d0f456cec00948121081a026eafe",
+    "semantic_hash": "b860d0f456cec00948121081a026eafe"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/mysteryegg1.json": {
+    "mtime": 1791929533.8079941,
+    "ast_hash": "6b09422f46cb6edf7b8e5bc1b021ae42",
+    "semantic_hash": "6b09422f46cb6edf7b8e5bc1b021ae42"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/mysteryegg2.json": {
+    "mtime": 1791929533.8086107,
+    "ast_hash": "9097e752e3c8a6574894fdf491b82119",
+    "semantic_hash": "9097e752e3c8a6574894fdf491b82119"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/mysteryegg3.json": {
+    "mtime": 1791929533.8091073,
+    "ast_hash": "cb8bfbd7f4b96a0bf2e9fad5b0366091",
+    "semantic_hash": "cb8bfbd7f4b96a0bf2e9fad5b0366091"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/spider_egg.json": {
+    "mtime": 1791929533.8096037,
+    "ast_hash": "d8369350865a249c10e75fbd3fdc53ae",
+    "semantic_hash": "d8369350865a249c10e75fbd3fdc53ae"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/spider_eggshell.json": {
+    "mtime": 1791929533.8115904,
+    "ast_hash": "31fdf1310e0d991e65239874dc1df63c",
+    "semantic_hash": "31fdf1310e0d991e65239874dc1df63c"
+  },
+  "src/main/resources/assets/primitive_menagerie/models/item/wonder_sap.json": {
+    "mtime": 1791929533.8120875,
+    "ast_hash": "2ae94125f4913be6a77bdfeed4866efa",
+    "semantic_hash": "2ae94125f4913be6a77bdfeed4866efa"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds.json": {
+    "mtime": 1791915085.9706812,
+    "ast_hash": "3536dcd35dc358879410795db0f112b8",
+    "semantic_hash": "3536dcd35dc358879410795db0f112b8"
+  },
+  "src/main/resources/data/minecraft/tags/entity_type/can_breathe_under_water.json": {
+    "mtime": 1791925468.743435,
+    "ast_hash": "3b7fac884c9125e9a9fe808dbdd759ac",
+    "semantic_hash": "3b7fac884c9125e9a9fe808dbdd759ac"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/chests/mimic_guaranteed.json": {
+    "mtime": 1791929964.665061,
+    "ast_hash": "8a80554c91d9fca8acb82f023de02f11",
+    "semantic_hash": "8a80554c91d9fca8acb82f023de02f11"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/chests/mimic_trap.json": {
+    "mtime": 1791915132.5561917,
+    "ast_hash": "341b9fd837a79380ec700ea7e0c06598",
+    "semantic_hash": "341b9fd837a79380ec700ea7e0c06598"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/chests/mimic_treasure.json": {
+    "mtime": 1791915132.5609572,
+    "ast_hash": "4d7b3c183654fcb6c724bd6c89691dba",
+    "semantic_hash": "4d7b3c183654fcb6c724bd6c89691dba"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/chests/mimic_unopened.json": {
+    "mtime": 1791929964.664564,
+    "ast_hash": "8a80554c91d9fca8acb82f023de02f11",
+    "semantic_hash": "8a80554c91d9fca8acb82f023de02f11"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/empty.json": {
+    "mtime": 1791915132.5619507,
+    "ast_hash": "8a80554c91d9fca8acb82f023de02f11",
+    "semantic_hash": "8a80554c91d9fca8acb82f023de02f11"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/blazing_juggernaut.json": {
+    "mtime": 1791915132.5629535,
+    "ast_hash": "671a47c10078af1037e9143e535effe7",
+    "semantic_hash": "671a47c10078af1037e9143e535effe7"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/chameleon.json": {
+    "mtime": 1791915132.563559,
+    "ast_hash": "f504ef37e1a5822d571cda05f23157d1",
+    "semantic_hash": "f504ef37e1a5822d571cda05f23157d1"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/dodo.json": {
+    "mtime": 1791915132.5640774,
+    "ast_hash": "18fa8eed535d946d0b755c077402fea1",
+    "semantic_hash": "18fa8eed535d946d0b755c077402fea1"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/festive_creeper.json": {
+    "mtime": 1791915132.5651743,
+    "ast_hash": "7ecaa9aed64c85fe77372a7dd607c748",
+    "semantic_hash": "7ecaa9aed64c85fe77372a7dd607c748"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/flame_spewer.json": {
+    "mtime": 1791915132.5661683,
+    "ast_hash": "de7c9ee1b191c83d1db123854b497abc",
+    "semantic_hash": "de7c9ee1b191c83d1db123854b497abc"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/goblin.json": {
+    "mtime": 1791915132.5666645,
+    "ast_hash": "bcb9c6ced08ab2407679992510f1bb89",
+    "semantic_hash": "bcb9c6ced08ab2407679992510f1bb89"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/harpy.json": {
+    "mtime": 1791915132.5691621,
+    "ast_hash": "cf8f5de2d50b893f4722e7bb5ee4f47c",
+    "semantic_hash": "cf8f5de2d50b893f4722e7bb5ee4f47c"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/lily_lurker.json": {
+    "mtime": 1791915132.5701573,
+    "ast_hash": "62de743f79f24ca85ac1079091ca8929",
+    "semantic_hash": "62de743f79f24ca85ac1079091ca8929"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/mimic.json": {
+    "mtime": 1791915132.570654,
+    "ast_hash": "fa7dd692ffb84366d025ed26aa90eda4",
+    "semantic_hash": "fa7dd692ffb84366d025ed26aa90eda4"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/mother_spider.json": {
+    "mtime": 1791915132.5721438,
+    "ast_hash": "4573567192c088058746c48912ee24cb",
+    "semantic_hash": "4573567192c088058746c48912ee24cb"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/rocket_creeper.json": {
+    "mtime": 1791915132.5736465,
+    "ast_hash": "ac6356c4b317349a93fb6b804c86d8c7",
+    "semantic_hash": "ac6356c4b317349a93fb6b804c86d8c7"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/special/filch_lizard_spawn.json": {
+    "mtime": 1791915132.5751605,
+    "ast_hash": "dffb90b6e165f36b722f830ee3d405e5",
+    "semantic_hash": "dffb90b6e165f36b722f830ee3d405e5"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/special/filch_lizard_steal.json": {
+    "mtime": 1791915132.5761535,
+    "ast_hash": "4547f9deeb6380a62d4118e20e76c528",
+    "semantic_hash": "4547f9deeb6380a62d4118e20e76c528"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/special/haunted_tool.json": {
+    "mtime": 1791915132.5771465,
+    "ast_hash": "e2ad1274de8c22ecbbc3a188c67e3479",
+    "semantic_hash": "e2ad1274de8c22ecbbc3a188c67e3479"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/special/treasure_slime.json": {
+    "mtime": 1791915132.578149,
+    "ast_hash": "91f3943c30914ae85b0a58ca6cb3a168",
+    "semantic_hash": "91f3943c30914ae85b0a58ca6cb3a168"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/support_creeper.json": {
+    "mtime": 1791915132.5791705,
+    "ast_hash": "b0dde36eab331eac2b2b0f03be6e2db2",
+    "semantic_hash": "b0dde36eab331eac2b2b0f03be6e2db2"
+  },
+  "src/main/resources/data/primitive_menagerie/loot_table/entities/void_eye.json": {
+    "mtime": 1791915132.5806627,
+    "ast_hash": "93d4f9d6e0bea6b46409c02bcdc1a274",
+    "semantic_hash": "93d4f9d6e0bea6b46409c02bcdc1a274"
+  },
+  "src/main/resources/data/primitive_menagerie/neoforge/biome_modifier/add_mimic_chests.json": {
+    "mtime": 1791930006.1209517,
+    "ast_hash": "8bed9d00584b6922f9406ca11faa4597",
+    "semantic_hash": "8bed9d00584b6922f9406ca11faa4597"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_boots.json": {
+    "mtime": 1791929675.4797714,
+    "ast_hash": "5f0220a0df626ccf7bc5ecc7f37b9bb3",
+    "semantic_hash": "5f0220a0df626ccf7bc5ecc7f37b9bb3"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_boots_toggle.json": {
+    "mtime": 1791929675.4802673,
+    "ast_hash": "bef730eae90da6cf693f391033d31636",
+    "semantic_hash": "bef730eae90da6cf693f391033d31636"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_chestplate.json": {
+    "mtime": 1791929675.477258,
+    "ast_hash": "f40bd0604354313d10a8402b7c4e94df",
+    "semantic_hash": "f40bd0604354313d10a8402b7c4e94df"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_chestplate_toggle.json": {
+    "mtime": 1791929675.477258,
+    "ast_hash": "bef730eae90da6cf693f391033d31636",
+    "semantic_hash": "bef730eae90da6cf693f391033d31636"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_helmet.json": {
+    "mtime": 1791929675.476592,
+    "ast_hash": "7a97bdb061d4aacb9d19a8f996960021",
+    "semantic_hash": "7a97bdb061d4aacb9d19a8f996960021"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_helmet_toggle.json": {
+    "mtime": 1791929675.476592,
+    "ast_hash": "bef730eae90da6cf693f391033d31636",
+    "semantic_hash": "bef730eae90da6cf693f391033d31636"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_leggings.json": {
+    "mtime": 1791929675.4782605,
+    "ast_hash": "c1b83cbff05cbacd25bf268c454b5ee6",
+    "semantic_hash": "c1b83cbff05cbacd25bf268c454b5ee6"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/camouflage_leggings_toggle.json": {
+    "mtime": 1791929675.4788733,
+    "ast_hash": "bef730eae90da6cf693f391033d31636",
+    "semantic_hash": "bef730eae90da6cf693f391033d31636"
+  },
+  "src/main/resources/data/primitive_menagerie/recipe/wonder_sap_convert.json": {
+    "mtime": 1791929675.4812603,
+    "ast_hash": "74c36ae9e306ca1e6f5c2bfcc9e33f2f",
+    "semantic_hash": "74c36ae9e306ca1e6f5c2bfcc9e33f2f"
+  },
+  "src/main/resources/data/primitive_menagerie/worldgen/configured_feature/mimic_chest.json": {
+    "mtime": 1791930006.1194465,
+    "ast_hash": "4c5fc3d545d3169eded86ba01f7040b1",
+    "semantic_hash": "4c5fc3d545d3169eded86ba01f7040b1"
+  },
+  "src/main/resources/data/primitive_menagerie/worldgen/placed_feature/mimic_chest.json": {
+    "mtime": 1791930006.1199498,
+    "ast_hash": "ef5f1ac344a23b94d9dc7bd1448c69df",
+    "semantic_hash": "ef5f1ac344a23b94d9dc7bd1448c69df"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/block/squish.ogg": {
+    "mtime": 1791915085.8871312,
+    "ast_hash": "00410ae0aceef1ed785009ee74d33150",
+    "semantic_hash": "00410ae0aceef1ed785009ee74d33150"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/brainslime/slimecharge.ogg": {
+    "mtime": 1791915085.888133,
+    "ast_hash": "f214017c357dc23c46c3fe9ac6e441ba",
+    "semantic_hash": "f214017c357dc23c46c3fe9ac6e441ba"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/flamespewer/idle.ogg": {
+    "mtime": 1791915085.889212,
+    "ast_hash": "135c04d1135c854e4e0d8cdc195f75a6",
+    "semantic_hash": "135c04d1135c854e4e0d8cdc195f75a6"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/angry1.ogg": {
+    "mtime": 1791915085.890505,
+    "ast_hash": "acaa457d940fd0d92e116abac1084e23",
+    "semantic_hash": "acaa457d940fd0d92e116abac1084e23"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/death1.ogg": {
+    "mtime": 1791915085.8910165,
+    "ast_hash": "d0d996cd9e3e87de76c4440ba3c02c2b",
+    "semantic_hash": "d0d996cd9e3e87de76c4440ba3c02c2b"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/death2.ogg": {
+    "mtime": 1791915085.8947208,
+    "ast_hash": "af3e7f16a7dee7a775d9976c567400de",
+    "semantic_hash": "af3e7f16a7dee7a775d9976c567400de"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/friend1.ogg": {
+    "mtime": 1791915085.8942244,
+    "ast_hash": "8739282700398d88a5c91b91c5129f2a",
+    "semantic_hash": "8739282700398d88a5c91b91c5129f2a"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/friend2.ogg": {
+    "mtime": 1791915085.896237,
+    "ast_hash": "a312bf86a8c6434c0937fd6a0d1caee9",
+    "semantic_hash": "a312bf86a8c6434c0937fd6a0d1caee9"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/hurt1.ogg": {
+    "mtime": 1791915085.8987753,
+    "ast_hash": "505d79e5bac6eedbde8bb522adc65170",
+    "semantic_hash": "505d79e5bac6eedbde8bb522adc65170"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/hurt2.ogg": {
+    "mtime": 1791915085.891552,
+    "ast_hash": "1f2a4e46fada26623403680788de3f99",
+    "semantic_hash": "1f2a4e46fada26623403680788de3f99"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/hurt3.ogg": {
+    "mtime": 1791915085.8937283,
+    "ast_hash": "645799f9f2383527dacd795f7b2950f9",
+    "semantic_hash": "645799f9f2383527dacd795f7b2950f9"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/idle1.ogg": {
+    "mtime": 1791915085.896237,
+    "ast_hash": "6779f30f76f4c921640c83741a5b7dbf",
+    "semantic_hash": "6779f30f76f4c921640c83741a5b7dbf"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/idle2.ogg": {
+    "mtime": 1791915085.9002652,
+    "ast_hash": "a5a0b4e4650753876bf0b9fb0203b888",
+    "semantic_hash": "a5a0b4e4650753876bf0b9fb0203b888"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/idle3.ogg": {
+    "mtime": 1791915085.9022515,
+    "ast_hash": "161ab1c55235945dbb4c73d143b71d40",
+    "semantic_hash": "161ab1c55235945dbb4c73d143b71d40"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/thanks1.ogg": {
+    "mtime": 1791915085.892226,
+    "ast_hash": "8c79f8e6e842788d71f9db360d212a94",
+    "semantic_hash": "8c79f8e6e842788d71f9db360d212a94"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/thanks2.ogg": {
+    "mtime": 1791915085.899768,
+    "ast_hash": "4dd154ae6bef1ebea67121dd904607f8",
+    "semantic_hash": "4dd154ae6bef1ebea67121dd904607f8"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/grovesprite/thanks3.ogg": {
+    "mtime": 1791915085.898259,
+    "ast_hash": "e47791c2fc0cfc35e0a1dffd8d7fab4a",
+    "semantic_hash": "e47791c2fc0cfc35e0a1dffd8d7fab4a"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/harpy/hurt.ogg": {
+    "mtime": 1791915085.914844,
+    "ast_hash": "171a179e81ad4a733a846912eaa0631d",
+    "semantic_hash": "171a179e81ad4a733a846912eaa0631d"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/harpy/idle.ogg": {
+    "mtime": 1791915085.9138422,
+    "ast_hash": "314b56a0c67424b525f610c47feaa21f",
+    "semantic_hash": "314b56a0c67424b525f610c47feaa21f"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/motherspider/spiderscreech.ogg": {
+    "mtime": 1791915085.9113681,
+    "ast_hash": "b6cb67435077b92367c4c644fa4fb16f",
+    "semantic_hash": "b6cb67435077b92367c4c644fa4fb16f"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/trollager/attack.ogg": {
+    "mtime": 1791915085.904878,
+    "ast_hash": "6db5a9fc1d6415b192518dcd337b1c35",
+    "semantic_hash": "6db5a9fc1d6415b192518dcd337b1c35"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/trollager/death.ogg": {
+    "mtime": 1791915085.9058716,
+    "ast_hash": "525187029c00a0ef4e752e5118057c1c",
+    "semantic_hash": "525187029c00a0ef4e752e5118057c1c"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/trollager/hit.ogg": {
+    "mtime": 1791915085.9068646,
+    "ast_hash": "6b55155bac183b2da97be01e921a3aec",
+    "semantic_hash": "6b55155bac183b2da97be01e921a3aec"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/trollager/idle.ogg": {
+    "mtime": 1791915085.907868,
+    "ast_hash": "043ea8924c1aaa264a0dd59ae093e7f4",
+    "semantic_hash": "043ea8924c1aaa264a0dd59ae093e7f4"
+  },
+  "src/main/resources/assets/primitive_menagerie/sounds/entity/voideye/idle.ogg": {
+    "mtime": 1791915085.9103653,
+    "ast_hash": "c787b1aa2180a48c588323fad71f47ad",
+    "semantic_hash": "c787b1aa2180a48c588323fad71f47ad"
+  }
+}

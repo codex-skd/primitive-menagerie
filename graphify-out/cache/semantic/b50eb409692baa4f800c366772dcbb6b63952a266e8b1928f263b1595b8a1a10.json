@@ -1,0 +1,1 @@
+{"nodes": [{"id": "4", "type": "image", "label": "Blazing Juggernaut Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\blazingjuggernaut\\blazingjuggernaut.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

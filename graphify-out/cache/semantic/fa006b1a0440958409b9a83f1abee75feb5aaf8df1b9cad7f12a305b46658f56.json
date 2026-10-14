@@ -1,0 +1,1 @@
+{"nodes": [{"id": "7", "type": "image", "label": "Creeper Chest Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\chest\\creeper.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "12", "type": "image", "label": "Flame Spewer Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\flamespewer\\flamespewer.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

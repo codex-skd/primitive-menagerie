@@ -1,0 +1,1 @@
+{"nodes": [{"id": "9", "type": "image", "label": "Enchanted Book Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\enchantedbook\\book.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}

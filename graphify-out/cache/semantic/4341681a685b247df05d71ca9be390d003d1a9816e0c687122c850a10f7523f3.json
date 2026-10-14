@@ -1,0 +1,1 @@
+{"nodes": [{"id": "5", "type": "image", "label": "Brain Slime Texture", "source_file": "src\\main\\resources\\assets\\primitive_menagerie\\textures\\entity\\brainslime\\slime_brain.png", "edges": [{"to": "1", "type": "texture"}]}], "edges": [], "hyperedges": []}
