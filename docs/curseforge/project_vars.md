@@ -2,7 +2,7 @@
 
 > Leídas por `codex-docs/scripts/curseforge-upload.ps1`. IDs verificados con la API: 9638 Client, 9639 Server, 11779 1.21.1, 10150 NeoForge. **No se guarda el token en este fichero**: la subida se hace con curl leyendo `codex-docs/secrets.md`.
 
-project_id = PENDIENTE
+project_id = 1744360
 game_versions = 9638, 9639, 11779, 10150
 release_type = beta
 relations = mobweave-core:requiredDependency
@@ -33,7 +33,7 @@ A menagerie of 26 familiar, sometimes silly creatures, plus camouflage armor, mi
 
 ### Pendiente antes de subir
 
-- Crear el proyecto en CurseForge y anotar su ID en `project_id`.
+- Proyecto creado en CurseForge (ID 1744360).
 - **Slug de la dependencia**: `mobweave-core` es el esperado, pero **no se pudo verificar** (la ficha estaba tras Cloudflare). Confirmarlo en la ficha de Mobweave Core (ID 1743225) antes de subir; si es otro, corregir `relations`.
 - Logo: generar con `logo_prompt.md`; derivar `logo_400.png` (solo local) e `icon.png` 64×64 en la raíz de `src/main/resources`, con `logoFile="icon.png"` en `neoforge.mods.toml`.
 - **NO inscribir en el programa de recompensas de CurseForge (Rewards)**: obra original modificada bajo CC BY-NC 3.0, solo uso no comercial.
